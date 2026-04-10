@@ -191,7 +191,7 @@
     // Smooth defaults
     gsap.defaults({ ease: 'power3.out' });
 
-    initEntrance();
+    // Entrance is CSS-animated on load — no GSAP needed
     initHero();
     initGSAPReveals();
   }
