@@ -309,6 +309,99 @@
     });
   }
 
+  // ── Click-to-Reveal ────────────────────────────────────────────
+  function initClickReveals() {
+    var triggers = document.querySelectorAll('.reveal-trigger');
+    triggers.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var section = btn.closest('section') || btn.closest('.section');
+        var content = section.querySelector('.reveal-content');
+        var nextBtn = section.querySelector('.next-btn');
+
+        if (content) {
+          content.classList.add('is-revealed');
+          // Re-trigger counters inside revealed content
+          content.querySelectorAll('[data-counter]').forEach(function(el) {
+            if (!el.dataset.animated) {
+              animateCounter(el);
+              el.dataset.animated = 'true';
+            }
+          });
+          // Re-trigger ring charts
+          content.querySelectorAll('.ring-fill[data-ring-percent]').forEach(function(ring) {
+            if (!ring.dataset.animated) {
+              var pct = parseFloat(ring.dataset.ringPercent) / 100;
+              var circ = parseFloat(ring.getAttribute('stroke-dasharray'));
+              ring.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1)';
+              ring.style.strokeDashoffset = circ * (1 - pct);
+              ring.dataset.animated = 'true';
+            }
+          });
+        }
+
+        // Hide the trigger button
+        btn.classList.add('is-hidden');
+
+        // Show next button after a delay
+        if (nextBtn) {
+          setTimeout(function() {
+            nextBtn.classList.add('is-visible');
+          }, 800);
+        }
+      });
+    });
+
+    // Next buttons — scroll to next section
+    document.querySelectorAll('.next-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var currentSection = btn.closest('section');
+        var nextSection = currentSection.nextElementSibling;
+        // Skip dividers
+        while (nextSection && !nextSection.tagName.match(/SECTION/i)) {
+          nextSection = nextSection.nextElementSibling;
+        }
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  // Make animateCounter accessible for reveal triggers
+  function animateCounter(el) {
+    var target = parseFloat(el.dataset.counter);
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var duration = parseInt(el.dataset.duration || '2500');
+    var decimals = parseInt(el.dataset.decimals || '0');
+    var startTime = performance.now();
+
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function update(currentTime) {
+      var elapsed = currentTime - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var easedProgress = easeOutExpo(progress);
+      var current = target * easedProgress;
+
+      if (decimals > 0) {
+        el.textContent = prefix + current.toFixed(decimals) + suffix;
+      } else {
+        el.textContent = formatNumber(current, prefix, suffix);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        showFinalValue(el);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
   // ── Ring Charts ────────────────────────────────────────────────
   function initRingCharts() {
     var rings = document.querySelectorAll('.ring-fill[data-ring-percent]');
@@ -348,6 +441,7 @@
     initReveals();
     initCounters();
     initRingCharts();
+    initClickReveals();
     initScrollEngine();
   }
 

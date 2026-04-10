@@ -442,6 +442,94 @@
   fill: var(--color-text-muted);
 }
 
+/* ═══ CLICK-TO-REVEAL ═══ */
+.reveal-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 100px;
+  background: rgba(201,168,76,0.06);
+  color: var(--color-gold);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  margin-top: var(--space-xl);
+  transition: all 0.3s;
+  animation: reveal-pulse 2.5s ease-in-out infinite;
+  position: relative;
+}
+.reveal-trigger:hover {
+  background: rgba(201,168,76,0.12);
+  box-shadow: 0 0 24px rgba(201,168,76,0.2);
+  transform: scale(1.03);
+}
+.reveal-trigger::before {
+  content: '✦';
+  font-size: 0.7em;
+}
+.reveal-trigger::after {
+  content: '✦';
+  font-size: 0.7em;
+}
+@keyframes reveal-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.15); }
+  50% { box-shadow: 0 0 20px 4px rgba(201,168,76,0.2); }
+}
+.reveal-trigger.is-hidden { display: none; }
+
+/* Hidden content block */
+.reveal-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease;
+}
+.reveal-content.is-revealed {
+  max-height: 3000px;
+  opacity: 1;
+}
+/* Stagger children on reveal */
+.reveal-content.is-revealed > * {
+  animation: reveal-child 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.reveal-content.is-revealed > *:nth-child(1) { animation-delay: 0.05s; }
+.reveal-content.is-revealed > *:nth-child(2) { animation-delay: 0.12s; }
+.reveal-content.is-revealed > *:nth-child(3) { animation-delay: 0.19s; }
+.reveal-content.is-revealed > *:nth-child(4) { animation-delay: 0.26s; }
+.reveal-content.is-revealed > *:nth-child(5) { animation-delay: 0.33s; }
+.reveal-content.is-revealed > *:nth-child(6) { animation-delay: 0.40s; }
+@keyframes reveal-child {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Next section button */
+.next-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: var(--space-xl);
+  transition: all 0.3s;
+}
+.next-btn.is-visible { display: inline-flex; }
+.next-btn:hover {
+  border-color: var(--color-gold-dim);
+  color: var(--color-gold);
+}
+.next-btn svg { width: 16px; height: 16px; }
+
 /* Scroll indicator */
 .scroll-indicator {
   display: flex;
