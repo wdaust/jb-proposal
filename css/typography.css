@@ -1,0 +1,126 @@
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+/* Section label: — LABEL • */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '—';
+  color: var(--color-text-dim);
+}
+
+.section-label::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  display: inline-block;
+}
+
+.section-label--danger::after {
+  background: var(--color-danger);
+}
+
+/* Headlines — all sans-serif, bold weight, gold for emphasis */
+.headline {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.headline .gold, .headline em, .headline i {
+  color: var(--color-gold);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.headline--hero {
+  font-size: var(--text-hero);
+}
+
+.headline--lg {
+  font-size: var(--text-2xl);
+}
+
+.headline--sm {
+  font-size: var(--text-xl);
+}
+
+.subtext {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.subtext--lg {
+  font-size: var(--text-lg);
+}
+
+.body-text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.body-text--light {
+  color: var(--color-text);
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.gold { color: var(--color-gold); }
+.danger { color: var(--color-danger); }
+
+.stat-number {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-number--huge {
+  font-size: var(--text-hero);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+.logo-text {
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+}
+
+.logo-tagline {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-text-dim);
+}

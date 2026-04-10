@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Transformation Plan — BJB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .progress-bar{position:fixed;top:0;left:0;width:100%;height:2px;z-index:var(--z-progress)}.progress-bar__fill{height:100%;width:0;background:var(--color-gold);transition:width 50ms linear}
+    .dot-nav{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:var(--z-nav);display:flex;flex-direction:column;gap:10px}.dot-nav__dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer;transition:all var(--duration-base) var(--ease-out-expo);position:relative}.dot-nav__dot:hover{background:rgba(255,255,255,.3);transform:scale(1.3)}.dot-nav__dot.is-active{background:var(--color-gold);transform:scale(1.5);box-shadow:0 0 8px rgba(201,168,76,.3)}.dot-nav__dot::before{content:attr(data-label);position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.7rem;color:var(--color-text-muted);background:var(--color-bg-card);padding:3px 8px;border-radius:4px;border:1px solid var(--color-border);opacity:0;pointer-events:none;transition:opacity var(--duration-fast)}.dot-nav__dot:hover::before{opacity:1}@media(max-width:1024px){.dot-nav{display:none}}
+    .scroll-to-top{position:fixed;bottom:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;background:var(--color-bg-card);border:1px solid var(--color-border);color:var(--color-text-muted);display:flex;align-items:center;justify-content:center;z-index:var(--z-nav);opacity:0;pointer-events:none;transition:all var(--duration-base)}.scroll-to-top.is-visible{opacity:1;pointer-events:auto}
+    /* Icon sizing */
+    .icon{width:40px;height:40px;color:var(--color-gold);flex-shrink:0;}.icon--lg{width:56px;height:56px;}.icon--sm{width:32px;height:32px;}
+    /* Card with icon */
+    .card--icon{display:flex;gap:var(--space-lg);align-items:flex-start;}
+    .card--icon .card__body{flex:1;}
+    /* Stat with icon */
+    .stat-row{display:flex;align-items:center;gap:var(--space-xl);}.stat-row__visual{flex-shrink:0;}.stat-row__content{flex:1;}
+    @media(max-width:768px){.stat-row{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar"><div class="progress-bar__fill" id="progress-bar-fill"></div></div>
+  <nav class="dot-nav" id="dot-nav">
+    <button class="dot-nav__dot" data-target="entrance" data-label="Opening"></button>
+    <button class="dot-nav__dot" data-target="hero" data-label="Vision"></button>
+    <button class="dot-nav__dot" data-target="overview" data-label="The Plan"></button>
+    <button class="dot-nav__dot" data-target="step-1" data-label="Leadership"></button>
+    <button class="dot-nav__dot" data-target="step-1b" data-label="Org Changes"></button>
+    <button class="dot-nav__dot" data-target="step-2a" data-label="Website Risk"></button>
+    <button class="dot-nav__dot" data-target="step-2b" data-label="Website Fix"></button>
+    <button class="dot-nav__dot" data-target="step-2c" data-label="Digital Build"></button>
+    <button class="dot-nav__dot" data-target="step-3" data-label="Resolution"></button>
+    <button class="dot-nav__dot" data-target="step-3b" data-label="KPIs & Proof"></button>
+    <button class="dot-nav__dot" data-target="step-4a" data-label="Data Wall"></button>
+    <button class="dot-nav__dot" data-target="step-4b" data-label="Optimus"></button>
+    <button class="dot-nav__dot" data-target="step-4c" data-label="Pipeline"></button>
+    <button class="dot-nav__dot" data-target="step-5" data-label="Partnerships"></button>
+    <button class="dot-nav__dot" data-target="step-6" data-label="BJB Resolve"></button>
+    <button class="dot-nav__dot" data-target="step-6b" data-label="Dispute KPIs"></button>
+    <button class="dot-nav__dot" data-target="step-7" data-label="Assets"></button>
+    <button class="dot-nav__dot" data-target="platform" data-label="Platform"></button>
+    <button class="dot-nav__dot" data-target="phases" data-label="Phases"></button>
+    <button class="dot-nav__dot" data-target="how" data-label="How"></button>
+    <button class="dot-nav__dot" data-target="timeline" data-label="Targets"></button>
+    <button class="dot-nav__dot" data-target="conclusion" data-label="Close"></button>
+  </nav>
+
+  <main>
+
+    <!-- ═══ ENTRANCE ═══ -->
+    <section id="entrance" class="section section--entrance section--full-vh flex-center">
+      <div class="text-center">
+        <div class="entrance-logo logo-text" style="font-size: clamp(3rem, 6vw, 6rem);">BJB</div>
+        <div class="entrance-rule"></div>
+        <div class="entrance-subtitle">A Strategic Proposal for Brandon J. Broderick</div>
+      </div>
+    </section>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero" class="section section--hero section--full-vh flex-center" style="position:relative;">
+      <div class="particles">
+        <div class="particle" style="left:10%;top:20%;animation-delay:0s;"></div>
+        <div class="particle" style="left:25%;top:60%;animation-delay:1.2s;"></div>
+        <div class="particle" style="left:40%;top:35%;animation-delay:2.8s;"></div>
+        <div class="particle" style="left:55%;top:75%;animation-delay:0.5s;"></div>
+        <div class="particle" style="left:70%;top:15%;animation-delay:3.5s;"></div>
+        <div class="particle" style="left:80%;top:50%;animation-delay:1.8s;"></div>
+        <div class="particle" style="left:15%;top:80%;animation-delay:4.2s;"></div>
+        <div class="particle" style="left:90%;top:30%;animation-delay:2.1s;"></div>
+        <div class="particle" style="left:35%;top:90%;animation-delay:5.0s;"></div>
+        <div class="particle" style="left:60%;top:45%;animation-delay:3.0s;"></div>
+        <div class="particle" style="left:5%;top:55%;animation-delay:6.0s;"></div>
+        <div class="particle" style="left:85%;top:70%;animation-delay:0.8s;"></div>
+      </div>
+      <div class="section__inner section__inner--narrow text-center" style="position:relative;z-index:1;">
+        <div class="section-label">The Mission</div>
+        <h1 class="headline headline--hero"><em>I want this work.</em></h1>
+        <p class="subtext subtext--lg mt-lg" style="margin:0 auto;">
+          Decades of experience in operational infrastructure, scalable systems, and performance engineering.
+          BJB has the brand. BJB has the cases. What BJB needs now is the operational architecture to become
+          <strong>one of the most dominant personal injury firms in the country.</strong>
+        </p>
+        <p class="mt-lg" style="font-size:var(--text-xl);color:var(--color-text);">
+          Seven steps. <span class="gold">One destination.</span>
+        </p>
+      </div>
+      <div class="scroll-indicator"><span>Scroll</span><div class="scroll-indicator__chevron"></div></div>
+    </section>
+
+    <!-- ═══ 7-STEP OVERVIEW ═══ -->
+    <section id="overview" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Transformation Plan</div>
+        <h2 class="headline headline--lg">Seven <em>strategic initiatives.</em></h2>
+        <p class="subtext mt-sm" style="margin-bottom:var(--space-xl);">Each builds on the last. Together, they create a nationally scalable, operationally dominant firm.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+          <a href="#step-1" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">01</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><circle cx="12" cy="7" r="3"/><path d="M12 10v4m-4 4a4 4 0 018 0"/></svg>
+            <span class="numbered-item__text">Leadership Structure</span>
+          </a>
+          <a href="#step-2a" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">02</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+            <span class="numbered-item__text">BJBJustice.com</span>
+          </a>
+          <a href="#step-3" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">03</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="numbered-item__text">Strategic Resolution Group</span>
+          </a>
+          <a href="#step-4a" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">04</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            <span class="numbered-item__text">Workflow Transformation</span>
+          </a>
+          <a href="#step-5" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">05</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <span class="numbered-item__text">Partnership Marketing</span>
+          </a>
+          <a href="#step-6" class="numbered-item reveal" style="text-decoration:none;">
+            <span class="numbered-item__num">06</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="numbered-item__text">BJB Resolve&trade; Platform</span>
+          </a>
+          <a href="#step-7" class="numbered-item reveal" style="text-decoration:none;grid-column:1/-1;max-width:calc(50% - var(--space-md)/2);">
+            <span class="numbered-item__num">07</span>
+            <svg class="icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-gold);flex-shrink:0;width:20px;height:20px;"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="numbered-item__text">Alternative Asset Strategies</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 1: LEADERSHIP ═══ -->
+    <section id="step-1" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M12 10v4"/><path d="M8 21a4 4 0 018 0"/><path d="M4 21a4 4 0 014-4"/><path d="M20 21a4 4 0 00-4-4"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 01</div>
+            <h2 class="headline headline--lg"><em>Leadership</em> structure.</h2>
+            <p class="subtext mt-sm">Clear authority. Faster execution. Scalable command.</p>
+          </div>
+        </div>
+        <div class="org-chart">
+          <div class="org-card reveal"><div class="org-card__name">Brandon J. Broderick</div><div class="org-card__title">Founder & Managing Partner</div></div>
+          <div class="org-connector reveal"></div>
+          <div class="org-card org-card--primary reveal"><div class="org-card__name">Justin B</div><div class="org-card__title">Executive Vice President</div></div>
+          <div style="display:flex;gap:var(--space-xl);justify-content:center;flex-wrap:wrap;">
+            <div style="display:flex;flex-direction:column;align-items:center;">
+              <div class="org-connector reveal"></div>
+              <div class="org-card reveal"><div class="org-card__name">Matthew Broderick</div><div class="org-card__title">Firm Vice President</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;">
+              <div class="org-connector reveal"></div>
+              <div class="org-card reveal" style="border-style:dashed;"><div class="org-card__name">Future Hire</div><div class="org-card__title">EVP — Litigation (by Q3)</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 1B: ORG CHANGES & STAFFING ═══ -->
+    <section id="step-1b" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 01 — Key Personnel</div>
+        <h2 class="headline headline--lg"><em>Organizational</em> changes.</h2>
+        <p class="subtext mt-sm">Expanded roles, offshore strategy, and structural realignment.</p>
+        <div class="grid-2 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <div class="card__title">Expanded Roles</div>
+            <ul class="card__list">
+              <li><strong>Marcus Burgess</strong> — oversee Intake (high-skill specialists), Case Opening (offshore CAAs), Claim Activation (offshore CAAs)</li>
+              <li><strong>Brittney Hale</strong> — Medical Management (high-skill CMs), Medical Records (offshore reps), Rapid Resolution Team</li>
+              <li><strong>Diane Quintanilla</strong> — Offshore CAA oversight</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <div class="card__title">Offshore Strategy</div>
+            <ul class="card__list">
+              <li>Offshore CAA administrative work</li>
+              <li>Offshore Medical Records Department</li>
+              <li>Estimated cost: <strong class="gold">$2,000/month</strong> per offshore resource</li>
+              <li>Push all admin offshore — elevate domestic team to high-skill roles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 2A: THE PROBLEM ═══ -->
+    <section id="step-2a" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="urgent-stamp reveal">Emergency Initiative</div>
+            <div class="section-label section-label--danger" style="margin-top:var(--space-sm);">Step 02 — The Risk</div>
+            <h2 class="headline headline--lg"><em>BJBJustice.com</em> — the urgent problem.</h2>
+            <p class="subtext mt-sm">The firm does not own or control its most valuable digital asset.</p>
+          </div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card card--danger reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M18.36 6.64A9 9 0 015.64 18.36M5.64 5.64A9 9 0 0118.36 18.36"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            <div class="card__title" style="color:var(--color-danger);">Zero Control</div>
+            <p class="card__text">Website, SEO equity, and lead data controlled by third-party vendor.</p>
+          </div>
+          <div class="card card--danger reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            <div class="card__title" style="color:var(--color-danger);">Total Dependency</div>
+            <p class="card__text">Lead flow, brand visibility, and growth pace are not in BJB's hands.</p>
+          </div>
+          <div class="card card--danger reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0020 0h-3"/><path d="M12 2a4 4 0 00-4 4"/><path d="M12 2a4 4 0 014 4"/></svg>
+            <div class="card__title" style="color:var(--color-danger);">Growth Ceiling</div>
+            <p class="card__text">National expansion and multi-state scaling impossible without ownership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 2B: THE SOLUTION ═══ -->
+    <section id="step-2b" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 02 — The Solution</div>
+            <h2 class="headline headline--lg"><em>BJBJustice.com</em> — own the future.</h2>
+            <p class="subtext mt-sm">A firm-owned platform that compounds: more content, more authority, more cases.</p>
+          </div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="card__title">Lead Gen Engine</div>
+            <p class="card__text">SEO-driven content, geo-targeted pages, intake funnels — all firm-owned.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="card__title">Brand Authority</div>
+            <p class="card__text">Video content, attorney authority pages, Brandon as national thought leader.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <div class="card__title">National Foundation</div>
+            <p class="card__text">Multi-state pages, practice area expansion, scalable marketing infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 2C: WEBSITE DEEP DIVE ═══ -->
+    <section id="step-2c" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 02 — Build Plan</div>
+        <h2 class="headline headline--lg"><em>Digital</em> infrastructure.</h2>
+        <div class="grid-2 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="card__title">SEO & Content Strategy</div>
+            <ul class="card__list">
+              <li>Preserve existing geo-coded indexing strategy</li>
+              <li>City pages, county pages, state pages</li>
+              <li>Practice-area + geography combos</li>
+              <li>Educational authority articles</li>
+              <li>Campaign-specific conversion pages</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <div class="card__title">Video-First Marketing</div>
+            <ul class="card__list">
+              <li>Position Brandon as national thought leader</li>
+              <li>Client education &amp; trust building content</li>
+              <li>Brand authority across all practice areas</li>
+              <li>Conversion improvement on intake pages</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-2 mt-lg">
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="7" r="3"/><path d="M12 10v4m-4 4a4 4 0 018 0"/></svg>
+            <div class="card__title">Priority Hire: Director of Digital Growth</div>
+            <ul class="card__list">
+              <li>SEO expertise</li>
+              <li>Video production</li>
+              <li>Content strategy &amp; digital analytics</li>
+              <li>Lead the BJBJustice.com rebuild</li>
+              <li>Oversee offshore marketing contractors</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <div class="card__title">Offshore Marketing Team</div>
+            <ul class="card__list">
+              <li>SEO content writing &amp; blog writing</li>
+              <li>Video editing</li>
+              <li>Landing page creation</li>
+              <li>Technical SEO support</li>
+              <li>Local listing management &amp; backlink outreach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 3: RESOLUTION ═══ -->
+    <section id="step-3" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 03</div>
+        <h2 class="headline headline--lg">The <em>resolution</em> gap.</h2>
+        <div class="grid-2 mt-lg" style="align-items:center;">
+          <div class="text-center reveal glow-wrap" style="padding:var(--space-lg);position:relative;">
+            <div class="glow glow--danger glow--lg"></div>
+            <div class="radar radar--danger"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div>
+            <div style="position:relative;z-index:1;">
+              <svg style="width:56px;height:56px;color:var(--color-danger);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/><line x1="1" y1="1" x2="23" y2="23" stroke="var(--color-danger)" stroke-width="2"/></svg>
+              <div class="stat-number stat-number--huge" data-counter="900">0</div>
+              <div class="stat-label" style="font-size:var(--text-base);">demands pending</div>
+              <div style="color:var(--color-danger);font-weight:700;font-size:var(--text-lg);margin-top:var(--space-xs);">ZERO follow-up calls</div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="card card--gold">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div class="card__title">Rapid Resolution Team</div>
+              <ul class="card__list">
+                <li>2–3 dedicated negotiators + 1 team lead</li>
+                <li>All sub-$50K settlement opportunities</li>
+                <li>First follow-up within 7 days</li>
+                <li>Follow-up every 7 days, escalation at 30</li>
+                <li>Resolve claims <strong>before</strong> litigation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flow mt-lg reveal">
+          <div class="flow__step flow__step--active">Demand Sent</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Assigned</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Contact</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Negotiate</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active" style="border-color:var(--color-gold);color:var(--color-gold);">Settlement</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 3B: RESOLUTION KPIs + PROOF ═══ -->
+    <section id="step-3b" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 03 — KPIs &amp; Proof of Execution</div>
+        <h2 class="headline headline--lg"><em>Measurable</em> outcomes.</h2>
+        <div class="grid-2 mt-xl">
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="card__title">Rapid Resolution KPIs</div>
+            <ul class="card__list">
+              <li>Calls per day</li>
+              <li>Settlements per week</li>
+              <li>Settlement cycle time</li>
+              <li>Settlement rate &amp; average value</li>
+              <li>Time from demand to settlement</li>
+              <li>Cases per negotiator / follow-up workload</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="card__title">Already Proven</div>
+            <ul class="card__list">
+              <li><strong class="gold">889 BOCs</strong> on March 4 → <strong class="gold">cleared to 0</strong> by April 3</li>
+              <li>40% of intake calls transferred to offshore — <strong>resolved</strong></li>
+              <li>RFD function: 3 FTEs + 3 part-timers = output of <strong>~1 FTE</strong></li>
+              <li>Could be handled by <strong>1 offshore resource at $2K/month</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bento mt-lg">
+          <!-- Ring chart: 40.1% -->
+          <div class="data-wall__item reveal bento--wide" style="display:flex;align-items:center;gap:var(--space-xl);background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:10px;padding:var(--space-lg);">
+            <div class="ring-chart">
+              <svg viewBox="0 0 120 120" width="110" height="110">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-border)" stroke-width="7"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-danger)" stroke-width="7" stroke-linecap="round" stroke-dasharray="314.2" stroke-dashoffset="314.2" class="ring-fill" data-ring-percent="40.1"/>
+              </svg>
+              <div class="ring-chart__label"><div class="ring-chart__value danger">40.1%</div></div>
+            </div>
+            <div>
+              <div style="font-size:var(--text-xl);font-weight:700;color:var(--color-text);" data-counter="1536">0</div>
+              <div class="stat-label">cases <strong>6+ months old</strong></div>
+            </div>
+          </div>
+          <!-- Ring chart: 13.3% -->
+          <div class="data-wall__item reveal" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:10px;padding:var(--space-lg);">
+            <div class="ring-chart">
+              <svg viewBox="0 0 120 120" width="100" height="100">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-border)" stroke-width="7"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-danger)" stroke-width="7" stroke-linecap="round" stroke-dasharray="314.2" stroke-dashoffset="314.2" class="ring-fill" data-ring-percent="13.3"/>
+              </svg>
+              <div class="ring-chart__label"><div class="ring-chart__value danger" style="font-size:var(--text-xl);">13.3%</div></div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-sm);">
+              <div style="font-size:var(--text-lg);font-weight:700;color:var(--color-text);" data-counter="511">0</div>
+              <div class="stat-label">cases <strong>12+ months old</strong></div>
+            </div>
+          </div>
+          <div class="data-wall__item reveal">
+            <div class="data-wall__value" data-counter="17" data-prefix="$" data-suffix=".54">$0</div>
+            <div class="data-wall__label"><strong>per case per day</strong><br>deficiency past 6 months</div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 4A: DATA WALL ═══ -->
+    <section id="step-4a" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 04 — The Numbers</div>
+            <h2 class="headline headline--lg"><em>Workflow</em> crisis.</h2>
+            <p class="subtext mt-sm">The numbers don't lie. The current function-based structure is bleeding cash.</p>
+          </div>
+        </div>
+        <div class="data-wall mt-xl">
+          <div class="data-wall__item reveal" style="position:relative;">
+            <div class="ring-chart" style="margin:0 auto var(--space-sm);">
+              <svg viewBox="0 0 120 120" width="90" height="90">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-border)" stroke-width="7"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-danger)" stroke-width="7" stroke-linecap="round" stroke-dasharray="314.2" stroke-dashoffset="314.2" class="ring-fill" data-ring-percent="64.3"/>
+              </svg>
+              <div class="ring-chart__label"><div class="ring-chart__value danger" style="font-size:var(--text-lg);">64.3%</div></div>
+            </div>
+            <div class="data-wall__value" data-counter="2462">0</div>
+            <div class="data-wall__label">cases <strong>3+ months old</strong></div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+          <div class="data-wall__item reveal glow-wrap" style="position:relative;">
+            <div class="glow glow--danger"></div>
+            <div style="position:relative;z-index:1;">
+              <svg style="width:32px;height:32px;color:var(--color-danger);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              <div class="data-wall__value" style="color:var(--color-danger);" data-counter="36465" data-prefix="$">$0</div>
+              <div class="data-wall__label"><strong>per day</strong> cash destruction</div>
+            </div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+          <div class="data-wall__item reveal">
+            <svg style="width:32px;height:32px;color:var(--color-gold);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div class="data-wall__value" data-counter="160">0</div>
+            <div class="data-wall__label"><strong>net backlog</strong>/month<br>400 in, 240 out</div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+        </div>
+        <div class="ticker-wrap"><div class="ticker"><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span></div></div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 4B: THE FIX ═══ -->
+    <section id="step-4b" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 04 — The Fix</div>
+        <h2 class="headline headline--lg"><em>Optimus</em> Operating System.</h2>
+        <p class="subtext mt-sm">Every workflow: measured, qualified, accountable, scored, reported in real time.</p>
+        <div class="grid-2 mt-xl">
+          <div class="card reveal" style="opacity:0.5;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-dim)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <div class="section-label" style="margin-bottom:var(--space-sm);">Before</div>
+            <ul class="card__list">
+              <li>Siloed departments</li>
+              <li>Work organized by role, not outcome</li>
+              <li>No cross-department accountability</li>
+              <li>Bottlenecks hidden and compounding</li>
+            </ul>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            <div class="section-label" style="margin-bottom:var(--space-sm);">After — Optimus</div>
+            <ul class="card__list">
+              <li>Workflows engineered end-to-end</li>
+              <li>Stage gates with required fields</li>
+              <li>SLA tracking and escalation</li>
+              <li>Real-time performance scoring</li>
+              <li><strong class="gold">30–50% skill level increase</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 4C: OPTIMUS WORKFLOW STAGES ═══ -->
+    <section id="step-4c" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 04 — The Pipeline</div>
+        <h2 class="headline headline--lg"><em>10-stage</em> workflow engine.</h2>
+        <p class="subtext mt-sm">OPTIMUS defines, enforces, and tracks every stage. No work advances without proper completion.</p>
+        <div class="flow mt-xl reveal" style="gap: var(--space-xs);">
+          <div class="flow__step flow__step--active">Intake</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Case Opening</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Claims Activation</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Pre-Lit</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Treatment</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Demand Prep</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Negotiations</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Litigation</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Settlement</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active" style="border-color:var(--color-gold);color:var(--color-gold);">Post-Settlement</div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <div class="card__title">Stage Gates</div>
+            <ul class="card__list">
+              <li>Required fields before stage movement</li>
+              <li>Stage movement logic enforced</li>
+              <li>Stage accountability ownership</li>
+              <li>Cycle time tracked per stage</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="card__title">SLA Enforcement</div>
+            <ul class="card__list">
+              <li>SLAs by department and stage</li>
+              <li>Automated triggers &amp; breach rules</li>
+              <li>Alerting &amp; escalation logic</li>
+              <li>Intake response, case opening, claims activation, treatment follow-up, demand prep, negotiation cadence</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div class="card__title">Data Hygiene</div>
+            <ul class="card__list">
+              <li>Required &amp; standardized field usage</li>
+              <li>Duplicate prevention</li>
+              <li>Validation rules</li>
+              <li>Completeness scoring &amp; dashboards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 5: PARTNERSHIPS ═══ -->
+    <section id="step-5" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 05</div>
+            <h2 class="headline headline--lg"><em>Partnership</em> marketing.</h2>
+            <p class="subtext mt-sm">Commission-only. Zero overhead. National scale. Led by <strong>Kevin Maleike</strong>.</p>
+          </div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <div class="card__title">Medical Partners</div>
+            <p class="card__text">Provider networks, lien programs, treatment coordination referrals.</p>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="card__title">Legal Partners</div>
+            <p class="card__text">Co-counsel, law firm referrals, cross-practice referral networks.</p>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <div class="card__title">Strategic Partners</div>
+            <p class="card__text">Distressed opportunities, geographic expansion, multi-practice sources.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 6: BJB RESOLVE ═══ -->
+    <section id="step-6" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 06</div>
+            <h2 class="headline headline--lg">BJB <em>Resolve</em>&trade;</h2>
+            <p class="subtext mt-sm">Digital dispute resolution at scale. NSA + PIP Arbitration unified into one platform.</p>
+          </div>
+        </div>
+        <div class="grid-2 mt-xl" style="align-items:stretch;">
+          <div class="card card--danger reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="1.5" style="margin-bottom:var(--space-sm);"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            <div class="section-label section-label--danger" style="margin-bottom:var(--space-sm);">Current</div>
+            <p class="body-text"><strong class="danger">23-person PIP Arb dept</strong></p>
+            <p class="card__text">Siloed. Standalone NSA Director. Fragmented. Slow scaling.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" style="margin-bottom:var(--space-sm);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div class="section-label" style="margin-bottom:var(--space-sm);">Future</div>
+            <p class="body-text"><strong class="gold">BJB Resolve&trade; Platform</strong></p>
+            <p class="card__text">Unified digital division. Centralized intake. Auto workflows. National scale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 6B: DISPUTE RESOLUTION KPIs ═══ -->
+    <section id="step-6b" class="section">
+      <div class="section__inner">
+        <div class="section-label">Step 06 — Performance Metrics</div>
+        <h2 class="headline headline--lg"><em>Dispute</em> resolution KPIs.</h2>
+        <p class="subtext mt-sm">The new marketplace measured by output, speed, and revenue — not headcount.</p>
+        <div class="grid-3 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="card__title">Volume</div>
+            <ul class="card__list">
+              <li>Matters opened</li>
+              <li>Matters qualified</li>
+              <li>Matters submitted</li>
+              <li>Referral source productivity</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="card__title">Speed</div>
+            <ul class="card__list">
+              <li>Avg days to submission</li>
+              <li>Avg days to resolution</li>
+              <li>Aging by stage</li>
+              <li>Follow-up completion rates</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <div class="card__title">Revenue</div>
+            <ul class="card__list">
+              <li>Recovery rate</li>
+              <li>Avg recovery per matter</li>
+              <li>Gross collections</li>
+              <li>Net margin by matter type</li>
+              <li>Staff output per week</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ STEP 7: ALTERNATIVE ASSETS ═══ -->
+    <section id="step-7" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">Step 07</div>
+            <h2 class="headline headline--lg"><em>Alternative</em> asset strategies.</h2>
+            <p class="subtext mt-sm">New revenue channels. Untapped markets. Long-term financial value.</p>
+          </div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div class="card__title">Pre-Foreclosure</div>
+            <p class="card__text">Identify distressed homeowners early. Contingency-based — no upfront cost.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <div class="card__title">Surplus Recovery</div>
+            <p class="card__text">Post-foreclosure surplus funds. New revenue stream for the firm.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            <div class="card__title">Structured Settlements</div>
+            <p class="card__text">Convert recovered funds into long-term financial assets. Recurring value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ PLATFORM ═══ -->
+    <section id="platform" class="section">
+      <div class="section__inner">
+        <div class="section-label">Platform Architecture</div>
+        <h2 class="headline headline--lg">Three layers. <em>One platform.</em></h2>
+        <p class="subtext mt-sm">Front end acquires. Middle monetizes. Back end drives execution.</p>
+        <div class="platform-layers">
+          <div class="platform-layer reveal">
+            <div class="platform-layer__label">Layer 1 — Front End</div>
+            <div class="platform-layer__title">Growth & Marketing Engine</div>
+            <div class="platform-layer__items">
+              <span class="platform-layer__item">SEO Content</span><span class="platform-layer__item">Geo Pages</span><span class="platform-layer__item">Lead Funnels</span><span class="platform-layer__item">Video</span><span class="platform-layer__item">Attorney Pages</span>
+            </div>
+          </div>
+          <div class="platform-layer reveal">
+            <div class="platform-layer__label">Layer 2 — Middle</div>
+            <div class="platform-layer__title">Dispute Resolution Marketplace</div>
+            <div class="platform-layer__items">
+              <span class="platform-layer__item">NSA Intake</span><span class="platform-layer__item">PIP Processing</span><span class="platform-layer__item">Provider Portal</span><span class="platform-layer__item">Auto Routing</span>
+            </div>
+          </div>
+          <div class="platform-layer reveal">
+            <div class="platform-layer__label">Layer 3 — Back End</div>
+            <div class="platform-layer__title">OPTIMUS Performance Ecosystem</div>
+            <div class="platform-layer__items">
+              <span class="platform-layer__item">Tower Metrics</span><span class="platform-layer__item">KPI Dashboards</span><span class="platform-layer__item">Scorecards</span><span class="platform-layer__item">SLA Tracking</span><span class="platform-layer__item">Stage Gates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ IMPLEMENTATION PHASES ═══ -->
+    <section id="phases" class="section">
+      <div class="section__inner">
+        <div class="section-label">Execution Plan</div>
+        <h2 class="headline headline--lg"><em>6-phase</em> implementation.</h2>
+        <p class="subtext mt-sm">Disciplined execution, not just vision. Each phase builds on the last.</p>
+        <div class="grid-3 mt-xl">
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 1</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">Platform Architecture</div>
+            <p class="card__text mt-sm">Approve BJBJustice.com initiative. Establish full firm ownership. Define front-end, marketplace, and OPTIMUS architecture.</p>
+          </div>
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 2</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">Dispute Marketplace Design</div>
+            <p class="card__text mt-sm">Fold NSA + PIP Arb into one model. Eliminate redundant leadership. Define intake, qualification, and recovery workflows.</p>
+          </div>
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 3</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">OPTIMUS Build & Litify</div>
+            <p class="card__text mt-sm">Map workflows across departments. Define stage gates. Build SLA framework. Implement prompt-driven workflows. Deploy Tower metrics.</p>
+          </div>
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 4</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">Staffing & Management Reset</div>
+            <p class="card__text mt-sm">Dissolve 23-person PIP Arb structure. Eliminate NSA Director. Launch Enterprise Dispute Development Group. Redesign around workflows.</p>
+          </div>
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 5</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">Marketing & Demand Gen</div>
+            <p class="card__text mt-sm">Hire Director of Digital Growth. Build offshore marketing team. Launch video campaign. Expand into 3–5 states.</p>
+          </div>
+          <div class="numbered-item reveal" style="flex-direction:column;align-items:flex-start;padding:var(--space-lg);">
+            <div class="numbered-item__num" style="margin-bottom:var(--space-xs);">Phase 6</div>
+            <div class="numbered-item__text" style="font-size:var(--text-base);font-weight:600;">Reporting & Performance</div>
+            <p class="card__text mt-sm">Deploy Tower dashboards. Publish KPI views. Track SLA compliance, aging, bottlenecks, throughput, and forecasting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ HOW WE HIT THE TARGETS ═══ -->
+    <section id="how" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Path to $20M</div>
+        <h2 class="headline headline--lg"><em>How</em> we get there.</h2>
+        <p class="subtext mt-sm">Every target has a specific mechanism. Nothing is aspirational — it's engineered.</p>
+        <div class="grid-2 mt-xl">
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div class="card__title">100 → 200 cases/week</div>
+            <p class="card__text"><strong>How:</strong> Organize and expand medical partner and law firm referral marketing with a <strong class="gold">commission-based team</strong>. Zero fixed overhead, scalable nationally.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <div class="card__title">$12K → $20K avg fee</div>
+            <p class="card__text"><strong>How:</strong> Push all admin to offshore agents. Create very <strong class="gold">high-skill med management team</strong> ($65K salary + $65K performance bonus). Better treatment coordination = higher case value.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3"/></svg>
+            <div class="card__title">$4M → $6M monthly settlements</div>
+            <p class="card__text"><strong>How:</strong> Create <strong class="gold">Strategic Resolution Group</strong> that actively pushes to settle all claims below $50,000. Active follow-up instead of passive waiting.</p>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
+            <div class="card__title">RFD → 200 cases/week</div>
+            <p class="card__text"><strong>How:</strong> Close the 160-case/month backlog gap. Workflow transformation + offshore admin = <strong class="gold">cases move faster through the pipeline</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ TARGETS ═══ -->
+    <section id="timeline" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Roadmap</div>
+        <h2 class="headline headline--lg">Q2–Q3 <em>2026 targets.</em></h2>
+
+        <!-- Stat Banner — Q2 -->
+        <div class="stat-banner reveal">
+          <div class="stat-banner__item">
+            <div class="stat-banner__value" data-counter="200">0</div>
+            <div class="stat-banner__label">cases / week</div>
+            <div class="stat-banner__sub">from 100</div>
+          </div>
+          <div class="stat-banner__item">
+            <div class="stat-banner__value" data-counter="20000" data-prefix="$">$0</div>
+            <div class="stat-banner__label">avg legal fee</div>
+            <div class="stat-banner__sub">from $12K</div>
+          </div>
+          <div class="stat-banner__item">
+            <div class="stat-banner__value" data-counter="6" data-prefix="$" data-suffix="M">$0</div>
+            <div class="stat-banner__label">monthly settlements</div>
+            <div class="stat-banner__sub">from $4M</div>
+          </div>
+        </div>
+
+        <!-- Q3 Destination with glow + radar -->
+        <div class="mt-xl text-center reveal glow-wrap" style="padding:var(--space-xl);position:relative;">
+          <div class="glow glow--lg"></div>
+          <div class="radar"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div>
+          <div style="position:relative;z-index:1;">
+            <div class="section-label">Q3 Destination</div>
+            <div class="stat-number stat-number--huge mt-sm" data-counter="20" data-prefix="$" data-suffix="M">$0</div>
+            <div class="stat-label" style="font-size:var(--text-lg);">per month in revenue</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ CONCLUSION ═══ -->
+    <section id="conclusion" class="section section--conclusion section--full-vh flex-center" style="position:relative;">
+      <div class="particles">
+        <div class="particle" style="left:8%;top:25%;animation-delay:0.5s;"></div>
+        <div class="particle" style="left:22%;top:65%;animation-delay:2.0s;"></div>
+        <div class="particle" style="left:45%;top:30%;animation-delay:1.0s;"></div>
+        <div class="particle" style="left:65%;top:70%;animation-delay:3.5s;"></div>
+        <div class="particle" style="left:78%;top:20%;animation-delay:0.2s;"></div>
+        <div class="particle" style="left:92%;top:55%;animation-delay:4.0s;"></div>
+        <div class="particle" style="left:30%;top:85%;animation-delay:1.5s;"></div>
+        <div class="particle" style="left:55%;top:15%;animation-delay:5.5s;"></div>
+        <div class="particle" style="left:12%;top:50%;animation-delay:3.0s;"></div>
+        <div class="particle" style="left:88%;top:40%;animation-delay:2.5s;"></div>
+      </div>
+      <div class="section__inner section__inner--narrow text-center" style="position:relative;z-index:1;">
+        <div class="section-label">The Commitment</div>
+        <div class="glow-wrap" style="position:relative;display:inline-block;">
+          <div class="glow glow--lg"></div>
+          <h2 class="headline headline--hero" style="position:relative;z-index:1;"><em>Let's build this.</em></h2>
+        </div>
+        <p class="subtext subtext--lg mt-lg" style="margin:var(--space-lg) auto 0;">
+          Experience. Discipline. Relentless execution. Strategic clarity.
+          <strong>Ready to begin immediately.</strong>
+        </p>
+        <div style="margin-top:var(--space-2xl);">
+          <div class="gold-rule" style="width:50px;"></div>
+          <div style="font-size:var(--text-xl);font-weight:600;color:var(--color-text);">Justin B</div>
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:.15rem;">Executive Vice President Proposal</div>
+          <div style="margin-top:var(--space-xl);">
+            <div class="logo-text" style="font-size:2.5rem;">BJB</div>
+            <div class="logo-tagline" style="margin-top:.3rem;">Personal Injury Attorney at Law</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 16V4M4 10l6-6 6 6"/></svg>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
