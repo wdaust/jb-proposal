@@ -530,6 +530,30 @@
 }
 .next-btn svg { width: 16px; height: 16px; }
 
+/* ═══ NEXT INITIATIVE BUTTON ═══ */
+.next-initiative-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 2rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 100px;
+  background: rgba(201,168,76,0.08);
+  color: var(--color-gold);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--space-2xl);
+  transition: all 0.3s;
+  animation: reveal-pulse 2.5s ease-in-out infinite;
+}
+.next-initiative-btn:hover {
+  background: rgba(201,168,76,0.15);
+  box-shadow: 0 0 30px rgba(201,168,76,0.25);
+  transform: scale(1.03);
+}
+.next-initiative-btn svg { width: 20px; height: 20px; }
+
 /* Scroll indicator */
 .scroll-indicator {
   display: flex;

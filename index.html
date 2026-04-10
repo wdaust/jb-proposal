@@ -102,28 +102,10 @@
       <div class="scroll-indicator"><span>Scroll</span><div class="scroll-indicator__chevron"></div></div>
     </section>
 
-    <!-- ═══ 7-STEP OVERVIEW ═══ -->
-    <section id="overview" class="section">
-      <div class="section__inner">
-        <div class="section-label">The Transformation Plan</div>
-        <h2 class="headline headline--lg">Seven <em>strategic initiatives.</em></h2>
-        <p class="subtext mt-sm" style="margin-bottom:var(--space-xl);">Each builds on the last. Together, they create a nationally scalable, operationally dominant firm.</p>
-        <div style="display:flex;flex-direction:column;gap:var(--space-md);max-width:500px;">
-          <div class="numbered-item reveal"><span class="numbered-item__num">01</span><span class="numbered-item__text">JB Initiative 1</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">02</span><span class="numbered-item__text">JB Initiative 2</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">03</span><span class="numbered-item__text">JB Initiative 3</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">04</span><span class="numbered-item__text">JB Initiative 4</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">05</span><span class="numbered-item__text">JB Initiative 5</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">06</span><span class="numbered-item__text">JB Initiative 6</span></div>
-          <div class="numbered-item reveal"><span class="numbered-item__num">07</span><span class="numbered-item__text">JB Initiative 7</span></div>
-        </div>
-      </div>
-    </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
 
     <!-- ═══ STEP 1: LEADERSHIP ═══ -->
-    <section id="step-1" class="section">
+    <section id="step-1" data-initiative="1" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
@@ -191,8 +173,9 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 1B: ORG CHANGES & STAFFING ═══ -->
-    <section id="step-1b" class="section">
+    <section id="step-1b" data-initiative="1" class="section">
       <div class="section__inner">
         <div class="section-label">JB Initiative 1 — Key Personnel</div>
         <h2 class="headline headline--lg">Who <em>runs</em> what?</h2>
@@ -222,13 +205,185 @@
         </div>
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="2">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
+    <!-- ═══ STEP 4A: DATA WALL ═══ -->
+    <section id="step-4a" data-initiative="2" class="section">
+      <div class="section__inner">
+        <div class="stat-row">
+          <div class="stat-row__visual">
+            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="stat-row__content">
+            <div class="section-label">JB Initiative 2 — The Numbers</div>
+            <h2 class="headline headline--lg">What's the <em>daily cost</em> of doing nothing?</h2>
+            <p class="subtext mt-sm">The numbers are devastating.</p>
+          </div>
+        </div>
+        
+        <button class="reveal-trigger">Tap to reveal</button>
+        <div class="reveal-content">
+<div class="data-wall mt-xl">
+          <div class="data-wall__item reveal" style="position:relative;">
+            <div class="ring-chart" style="margin:0 auto var(--space-sm);">
+              <svg viewBox="0 0 120 120" width="90" height="90">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-border)" stroke-width="7"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-danger)" stroke-width="7" stroke-linecap="round" stroke-dasharray="314.2" stroke-dashoffset="314.2" class="ring-fill" data-ring-percent="64.3"/>
+              </svg>
+              <div class="ring-chart__label"><div class="ring-chart__value danger" style="font-size:var(--text-lg);">64.3%</div></div>
+            </div>
+            <div class="data-wall__value" data-counter="2462">0</div>
+            <div class="data-wall__label">cases <strong>3+ months old</strong></div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+          <div class="data-wall__item reveal glow-wrap" style="position:relative;">
+            <div class="glow glow--danger"></div>
+            <div style="position:relative;z-index:1;">
+              <svg style="width:32px;height:32px;color:var(--color-danger);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              <div class="data-wall__value" style="color:var(--color-danger);" data-counter="36465" data-prefix="$">$0</div>
+              <div class="data-wall__label"><strong>per day</strong> cash destruction</div>
+            </div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+          <div class="data-wall__item reveal">
+            <svg style="width:32px;height:32px;color:var(--color-gold);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div class="data-wall__value" data-counter="160">0</div>
+            <div class="data-wall__label"><strong>net backlog</strong>/month<br>400 in, 240 out</div>
+            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
+          </div>
+        </div>
+        <div class="ticker-wrap"><div class="ticker"><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span></div></div>
+
+        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+
+    <!-- ═══ STEP 4B: THE FIX ═══ -->
+    <section id="step-4b" data-initiative="2" class="section">
+      <div class="section__inner">
+        <div class="section-label">JB Initiative 2 — The Fix</div>
+        <h2 class="headline headline--lg">What <em>replaces</em> the current model?</h2>
+        <p class="subtext mt-sm">A system that makes every workflow measurable, accountable, and visible.</p>
+        
+        <button class="reveal-trigger">Tap to reveal</button>
+        <div class="reveal-content">
+<div class="grid-2 mt-xl">
+          <div class="card reveal" style="opacity:0.5;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-dim)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <div class="section-label" style="margin-bottom:var(--space-sm);">Before</div>
+            <ul class="card__list">
+              <li>Siloed departments</li>
+              <li>Work organized by role, not outcome</li>
+              <li>No cross-department accountability</li>
+              <li>Bottlenecks hidden and compounding</li>
+            </ul>
+          </div>
+          <div class="card card--gold reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            <div class="section-label" style="margin-bottom:var(--space-sm);">After — Optimus</div>
+            <ul class="card__list">
+              <li>Workflows engineered end-to-end</li>
+              <li>Stage gates with required fields</li>
+              <li>SLA tracking and escalation</li>
+              <li>Real-time performance scoring</li>
+              <li><strong class="gold">30–50% skill level increase</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+
+    <!-- ═══ STEP 4C: OPTIMUS WORKFLOW STAGES ═══ -->
+    <section id="step-4c" data-initiative="2" class="section">
+      <div class="section__inner">
+        <div class="section-label">JB Initiative 2 — The Pipeline</div>
+        <h2 class="headline headline--lg">How does every case <em>move</em> through the firm?</h2>
+        <p class="subtext mt-sm">Ten stages. Every one enforced, tracked, and measured.</p>
+        
+        <button class="reveal-trigger">Tap to reveal</button>
+        <div class="reveal-content">
+<div class="flow mt-xl reveal" style="gap: var(--space-xs);">
+          <div class="flow__step flow__step--active">Intake</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Case Opening</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Claims Activation</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Pre-Lit</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Treatment</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Demand Prep</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Negotiations</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Litigation</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active">Settlement</div>
+          <div class="flow__arrow">&rarr;</div>
+          <div class="flow__step flow__step--active" style="border-color:var(--color-gold);color:var(--color-gold);">Post-Settlement</div>
+        </div>
+        <div class="grid-3 mt-xl">
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <div class="card__title">Stage Gates</div>
+            <ul class="card__list">
+              <li>Required fields before stage movement</li>
+              <li>Stage movement logic enforced</li>
+              <li>Stage accountability ownership</li>
+              <li>Cycle time tracked per stage</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="card__title">SLA Enforcement</div>
+            <ul class="card__list">
+              <li>SLAs by department and stage</li>
+              <li>Automated triggers &amp; breach rules</li>
+              <li>Alerting &amp; escalation logic</li>
+              <li>Intake response, case opening, claims activation, treatment follow-up, demand prep, negotiation cadence</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div class="card__title">Data Hygiene</div>
+            <ul class="card__list">
+              <li>Required &amp; standardized field usage</li>
+              <li>Duplicate prevention</li>
+              <li>Validation rules</li>
+              <li>Completeness scoring &amp; dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+
+        <button class="next-initiative-btn" data-unlock="3">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </section>
+
+    <div class="section-divider"><div class="section-divider__line"></div></div>
+
+
     <!-- ═══ STEP 2A: THE PROBLEM ═══ -->
-    <section id="step-2a" class="section">
+    <section id="step-2a" data-initiative="3" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
@@ -236,7 +391,7 @@
           </div>
           <div class="stat-row__content">
             <div class="urgent-stamp">Emergency Initiative</div>
-            <div class="section-label section-label--danger" style="margin-top:var(--space-sm);">JB Initiative 2 — The Risk</div>
+            <div class="section-label section-label--danger" style="margin-top:var(--space-sm);">JB Initiative 3 — The Risk</div>
             <h2 class="headline headline--lg">What's the firm's <em>biggest vulnerability?</em></h2>
             <p class="subtext mt-sm">The answer may surprise you.</p>
           </div>
@@ -267,15 +422,16 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 2B: THE SOLUTION ═══ -->
-    <section id="step-2b" class="section">
+    <section id="step-2b" data-initiative="3" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
             <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
           </div>
           <div class="stat-row__content">
-            <div class="section-label">JB Initiative 2 — The Solution</div>
+            <div class="section-label">JB Initiative 3 — The Solution</div>
             <h2 class="headline headline--lg">So how do we <em>fix it?</em></h2>
             <p class="subtext mt-sm">Build BJBJustice.com — a firm-owned growth engine.</p>
           </div>
@@ -308,10 +464,11 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 2C: WEBSITE DEEP DIVE ═══ -->
-    <section id="step-2c" class="section">
+    <section id="step-2c" data-initiative="3" class="section">
       <div class="section__inner">
-        <div class="section-label">JB Initiative 2 — Build Plan</div>
+        <div class="section-label">JB Initiative 3 — Build Plan</div>
         <h2 class="headline headline--lg">What does the <em>build</em> look like?</h2>
         
         <button class="reveal-trigger">Tap to reveal</button>
@@ -366,15 +523,18 @@
 
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="4">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 3: RESOLUTION ═══ -->
-    <section id="step-3" class="section">
+    <section id="step-3" data-initiative="4" class="section">
       <div class="section__inner">
-        <div class="section-label">JB Initiative 3</div>
+        <div class="section-label">JB Initiative 4</div>
         <h2 class="headline headline--lg">How many demands are <em>sitting untouched?</em></h2>
         
         <button class="reveal-trigger">Tap to reveal</button>
@@ -423,10 +583,11 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 3B: RESOLUTION KPIs + PROOF ═══ -->
-    <section id="step-3b" class="section">
+    <section id="step-3b" data-initiative="4" class="section">
       <div class="section__inner">
-        <div class="section-label">JB Initiative 3 — Proof</div>
+        <div class="section-label">JB Initiative 4 — Proof</div>
         <h2 class="headline headline--lg">Can we <em>prove</em> this works?</h2>
         
         <button class="reveal-trigger">Tap to reveal</button>
@@ -493,177 +654,16 @@
 
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="5">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
-    <!-- ═══ STEP 4A: DATA WALL ═══ -->
-    <section id="step-4a" class="section">
-      <div class="section__inner">
-        <div class="stat-row">
-          <div class="stat-row__visual">
-            <svg class="icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div class="stat-row__content">
-            <div class="section-label">JB Initiative 4 — The Numbers</div>
-            <h2 class="headline headline--lg">What's the <em>daily cost</em> of doing nothing?</h2>
-            <p class="subtext mt-sm">The numbers are devastating.</p>
-          </div>
-        </div>
-        
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-<div class="data-wall mt-xl">
-          <div class="data-wall__item reveal" style="position:relative;">
-            <div class="ring-chart" style="margin:0 auto var(--space-sm);">
-              <svg viewBox="0 0 120 120" width="90" height="90">
-                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-border)" stroke-width="7"/>
-                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--color-danger)" stroke-width="7" stroke-linecap="round" stroke-dasharray="314.2" stroke-dashoffset="314.2" class="ring-fill" data-ring-percent="64.3"/>
-              </svg>
-              <div class="ring-chart__label"><div class="ring-chart__value danger" style="font-size:var(--text-lg);">64.3%</div></div>
-            </div>
-            <div class="data-wall__value" data-counter="2462">0</div>
-            <div class="data-wall__label">cases <strong>3+ months old</strong></div>
-            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
-          </div>
-          <div class="data-wall__item reveal glow-wrap" style="position:relative;">
-            <div class="glow glow--danger"></div>
-            <div style="position:relative;z-index:1;">
-              <svg style="width:32px;height:32px;color:var(--color-danger);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              <div class="data-wall__value" style="color:var(--color-danger);" data-counter="36465" data-prefix="$">$0</div>
-              <div class="data-wall__label"><strong>per day</strong> cash destruction</div>
-            </div>
-            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
-          </div>
-          <div class="data-wall__item reveal">
-            <svg style="width:32px;height:32px;color:var(--color-gold);margin:0 auto var(--space-sm);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <div class="data-wall__value" data-counter="160">0</div>
-            <div class="data-wall__label"><strong>net backlog</strong>/month<br>400 in, 240 out</div>
-            <div class="data-wall__bar"><div class="data-wall__bar-fill"></div></div>
-          </div>
-        </div>
-        <div class="ticker-wrap"><div class="ticker"><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span><span>Every day of inaction costs $36,465</span></div></div>
-
-        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"><div class="section-divider__line"></div></div>
-
-    <!-- ═══ STEP 4B: THE FIX ═══ -->
-    <section id="step-4b" class="section">
-      <div class="section__inner">
-        <div class="section-label">JB Initiative 4 — The Fix</div>
-        <h2 class="headline headline--lg">What <em>replaces</em> the current model?</h2>
-        <p class="subtext mt-sm">A system that makes every workflow measurable, accountable, and visible.</p>
-        
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-<div class="grid-2 mt-xl">
-          <div class="card reveal" style="opacity:0.5;">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-dim)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            <div class="section-label" style="margin-bottom:var(--space-sm);">Before</div>
-            <ul class="card__list">
-              <li>Siloed departments</li>
-              <li>Work organized by role, not outcome</li>
-              <li>No cross-department accountability</li>
-              <li>Bottlenecks hidden and compounding</li>
-            </ul>
-          </div>
-          <div class="card card--gold reveal">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-            <div class="section-label" style="margin-bottom:var(--space-sm);">After — Optimus</div>
-            <ul class="card__list">
-              <li>Workflows engineered end-to-end</li>
-              <li>Stage gates with required fields</li>
-              <li>SLA tracking and escalation</li>
-              <li>Real-time performance scoring</li>
-              <li><strong class="gold">30–50% skill level increase</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"><div class="section-divider__line"></div></div>
-
-    <!-- ═══ STEP 4C: OPTIMUS WORKFLOW STAGES ═══ -->
-    <section id="step-4c" class="section">
-      <div class="section__inner">
-        <div class="section-label">JB Initiative 4 — The Pipeline</div>
-        <h2 class="headline headline--lg">How does every case <em>move</em> through the firm?</h2>
-        <p class="subtext mt-sm">Ten stages. Every one enforced, tracked, and measured.</p>
-        
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-<div class="flow mt-xl reveal" style="gap: var(--space-xs);">
-          <div class="flow__step flow__step--active">Intake</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Case Opening</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Claims Activation</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Pre-Lit</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Treatment</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Demand Prep</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Negotiations</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Litigation</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active">Settlement</div>
-          <div class="flow__arrow">&rarr;</div>
-          <div class="flow__step flow__step--active" style="border-color:var(--color-gold);color:var(--color-gold);">Post-Settlement</div>
-        </div>
-        <div class="grid-3 mt-xl">
-          <div class="card reveal">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-            <div class="card__title">Stage Gates</div>
-            <ul class="card__list">
-              <li>Required fields before stage movement</li>
-              <li>Stage movement logic enforced</li>
-              <li>Stage accountability ownership</li>
-              <li>Cycle time tracked per stage</li>
-            </ul>
-          </div>
-          <div class="card reveal">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div class="card__title">SLA Enforcement</div>
-            <ul class="card__list">
-              <li>SLAs by department and stage</li>
-              <li>Automated triggers &amp; breach rules</li>
-              <li>Alerting &amp; escalation logic</li>
-              <li>Intake response, case opening, claims activation, treatment follow-up, demand prep, negotiation cadence</li>
-            </ul>
-          </div>
-          <div class="card reveal">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:var(--space-sm);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            <div class="card__title">Data Hygiene</div>
-            <ul class="card__list">
-              <li>Required &amp; standardized field usage</li>
-              <li>Duplicate prevention</li>
-              <li>Validation rules</li>
-              <li>Completeness scoring &amp; dashboards</li>
-            </ul>
-          </div>
-        </div>
-
-        <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"><div class="section-divider__line"></div></div>
 
     <!-- ═══ STEP 5: PARTNERSHIPS ═══ -->
-    <section id="step-5" class="section">
+    <section id="step-5" data-initiative="5" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
@@ -698,13 +698,16 @@
 
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="6">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 6: BJB RESOLVE ═══ -->
-    <section id="step-6" class="section">
+    <section id="step-6" data-initiative="6" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
@@ -741,8 +744,9 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 6B: DISPUTE RESOLUTION KPIs ═══ -->
-    <section id="step-6b" class="section">
+    <section id="step-6b" data-initiative="6" class="section">
       <div class="section__inner">
         <div class="section-label">JB Initiative 6 — KPIs</div>
         <h2 class="headline headline--lg">How do we <em>measure</em> dispute resolution?</h2>
@@ -786,13 +790,16 @@
 
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="7">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ STEP 7: ALTERNATIVE ASSETS ═══ -->
-    <section id="step-7" class="section">
+    <section id="step-7" data-initiative="7" class="section">
       <div class="section__inner">
         <div class="stat-row">
           <div class="stat-row__visual">
@@ -827,13 +834,16 @@
 
         <button class="next-btn" aria-label="Next section"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
+
+        <button class="next-initiative-btn" data-unlock="8">Next Initiative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ PLATFORM ═══ -->
-    <section id="platform" class="section">
+    <section id="platform" data-initiative="8" class="section">
       <div class="section__inner">
         <div class="section-label">Platform Architecture</div>
         <h2 class="headline headline--lg">How does it all <em>fit together?</em></h2>
@@ -872,8 +882,9 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ IMPLEMENTATION PHASES ═══ -->
-    <section id="phases" class="section">
+    <section id="phases" data-initiative="8" class="section">
       <div class="section__inner">
         <div class="section-label">Execution Plan</div>
         <h2 class="headline headline--lg">What does the <em>rollout</em> look like?</h2>
@@ -921,8 +932,9 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ HOW WE HIT THE TARGETS ═══ -->
-    <section id="how" class="section">
+    <section id="how" data-initiative="8" class="section">
       <div class="section__inner">
         <div class="section-label">The Path to $20M</div>
         <h2 class="headline headline--lg">How does each <em>target</em> get hit?</h2>
@@ -960,8 +972,9 @@
 
     <div class="section-divider"><div class="section-divider__line"></div></div>
 
+
     <!-- ═══ TARGETS ═══ -->
-    <section id="timeline" class="section">
+    <section id="timeline" data-initiative="8" class="section">
       <div class="section__inner">
         <div class="section-label">The Roadmap</div>
         <h2 class="headline headline--lg">What does the firm look like in <em>6 months?</em></h2>
@@ -1004,10 +1017,11 @@
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    
+<div class="section-divider"><div class="section-divider__line"></div></div>
 
     <!-- ═══ CONCLUSION ═══ -->
-    <section id="conclusion" class="section section--conclusion section--full-vh flex-center" style="position:relative;">
+    <section id="conclusion" data-initiative="9" class="section section--conclusion section--full-vh flex-center" style="position:relative;">
       <div class="particles">
         <div class="particle" style="left:8%;top:25%;animation-delay:0.5s;"></div>
         <div class="particle" style="left:22%;top:65%;animation-delay:2.0s;"></div>
