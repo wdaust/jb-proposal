@@ -39,7 +39,7 @@
   <main>
 
     <!-- ═══ ENTRANCE ═══ -->
-    <section id="entrance" class="section section--entrance section--full-vh flex-center" style="position:relative;">
+    <section id="entrance" data-order="0" class="section section--entrance section--full-vh flex-center" style="position:relative;">
       <div class="text-center">
         <div class="entrance-logo logo-text" style="font-size:clamp(3rem,6vw,6rem);">BJB</div>
         <div class="entrance-rule"></div>
@@ -64,16 +64,16 @@
     <!-- ═══════════════════════════════════════
          ACT 1: THE PROBLEMS + SOLUTIONS
          ═══════════════════════════════════════ -->
-    <div class="act-header">
+    <div class="act-header" data-order="1">
       <div class="act-label act-label--danger">The Critical Problems</div>
       <div class="act-title">A function-based structure is <span style="color:var(--color-danger)">destroying value.</span></div>
       <div class="act-subtitle">Five structural problems. Each one is nobody's fault — but everyone's to fix. Each problem is followed by its engineered solution.</div>
     </div>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="2"><div class="section-divider__line"></div></div>
 
     <!-- ── PROBLEM 1 ── -->
-    <section id="p1" class="section">
+    <section id="p1" data-order="2" class="section">
       <div class="section__inner">
         <div class="section-label section-label--danger">Problem 1</div>
         <h2 class="headline headline--lg">Inventory is growing <em>faster than throughput.</em></h2>
@@ -86,15 +86,15 @@
           </div>
           <p class="subtext mt-lg" style="text-align:center;max-width:100%">37 extra cases accumulate <strong>every single week</strong>. Nearly 2,000 additional cases of inventory pressure per year.</p>
           <div class="blame"><div class="blame__q">Whose fault is this?</div><div class="blame__a">No one's.</div><div class="blame__r">This is a structural throughput problem — not a performance problem.</div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="2" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="3"><div class="section-divider__line"></div></div>
 
     <!-- ── SOLUTION 1 ── -->
-    <section id="s1" class="section">
+    <section id="s1" data-order="3" class="section">
       <div class="section__inner">
         <div class="solution-label">Solution 1</div>
         <h2 class="headline headline--lg">The <em>Case Engineering</em> Department.</h2>
@@ -113,15 +113,15 @@
             <div class="card card--gold"><div class="card__title">A Case Engineer is...</div><ul class="card__list"><li>The progression owner: activation to settlement readiness</li><li>The treatment advancement manager</li><li>The dormant inventory reactivation owner</li><li>The escalation trigger owner</li><li>The operational driver of value creation in pre-lit</li></ul></div>
           </div>
           <div class="callout mt-xl text-center"><p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text)">Staffing: 3,800 cases &divide; 70 files = <strong class="gold">55 Case Engineers</strong></p><p class="subtext mt-sm" style="margin:var(--space-sm) auto 0">Retain 20 current CMs. Hire 35 additional. This department must be <strong>built</strong>, not renamed.</p></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="4" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="4"><div class="section-divider__line"></div></div>
 
     <!-- ── PROBLEM 2 ── -->
-    <section id="p2" class="section">
+    <section id="p2" data-order="4" class="section">
       <div class="section__inner">
         <div class="section-label section-label--danger">Problem 2</div>
         <h2 class="headline headline--lg"><em>413 cases</em> are not in treatment.</h2>
@@ -135,15 +135,15 @@
             <div class="card card--gold"><div class="card__title">Trapped Revenue</div><ul class="card__list"><li>At $8K avg fee: <strong class="gold">$3,304,000</strong></li><li>At $15K avg fee: <strong class="gold">$6,195,000</strong></li><li>318 excess beyond 2.5% allowance</li><li>Recoverable: <strong class="gold">$2.5M – $4.8M</strong></li></ul></div>
           </div>
           <div class="blame"><div class="blame__q">Whose fault is this?</div><div class="blame__a">No one's.</div><div class="blame__r">No system exists to prevent treatment stagnation at scale.</div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="5" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="5"><div class="section-divider__line"></div></div>
 
     <!-- ── SOLUTION 2 ── -->
-    <section id="s2" class="section">
+    <section id="s2" data-order="5" class="section">
       <div class="section__inner">
         <div class="solution-label">Solution 2</div>
         <h2 class="headline headline--lg">Active treatment <em>progression monitoring.</em></h2>
@@ -153,15 +153,15 @@
             <div class="card card--gold"><div class="card__title">What Case Engineering Fixes</div><ul class="card__list"><li>Every case assigned a progression owner</li><li>Treatment gaps surfaced in days, not months</li><li>Dormant cases become an active management queue</li><li>Escalation triggers standardized</li><li>Milestone-based records retrieval</li><li>Treatment stagnation impossible to hide</li></ul></div>
             <div class="card"><div class="card__title">Offshore Absorbs Admin</div><ul class="card__list"><li>Case opening &amp; claims activation → offshore CAAs</li><li>Medical records retrieval → offshore team</li><li>High-cost labor focused on value-driving decisions</li><li>Lower-cost support handles repeatable process work</li><li>Estimated cost: <strong class="gold">$2,000/month</strong> per offshore resource</li></ul></div>
           </div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="6" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="6"><div class="section-divider__line"></div></div>
 
     <!-- ── PROBLEM 3 ── -->
-    <section id="p3" class="section">
+    <section id="p3" data-order="6" class="section">
       <div class="section__inner">
         <div class="section-label section-label--danger">Problem 3</div>
         <h2 class="headline headline--lg">Activity intensity is <em>too low</em> for the portfolio.</h2>
@@ -174,15 +174,15 @@
           </div>
           <p class="subtext mt-lg" style="text-align:center;max-width:100%">Across <strong>36 case managers</strong>: 468 dials/day, 27.5 total talk hours. For <strong>3,800 cases</strong>, pursuit intensity is a serious warning sign.</p>
           <div class="blame"><div class="blame__q">Whose fault is this?</div><div class="blame__a">No one's.</div><div class="blame__r">Admin and strategic work are blended. The model isn't designed for the intensity the portfolio requires.</div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="7" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="7"><div class="section-divider__line"></div></div>
 
     <!-- ── SOLUTION 3 ── -->
-    <section id="s3" class="section">
+    <section id="s3" data-order="7" class="section">
       <div class="section__inner">
         <div class="solution-label">Solution 3</div>
         <h2 class="headline headline--lg">Separate admin from <em>strategic work.</em></h2>
@@ -192,15 +192,15 @@
             <div class="card" style="opacity:.5"><div class="card__title">Current: Blended Model</div><ul class="card__list"><li>CMs handle admin + strategic work equally</li><li>Treatment pursuit drowns in paperwork</li><li>No escalation triggers</li><li>Progression reactive, not designed</li></ul></div>
             <div class="card card--gold"><div class="card__title">Future: Separated Model</div><ul class="card__list"><li>Offshore absorbs all admin (CAAs, med records)</li><li>Case Engineers focus on treatment advancement</li><li>60-80 files per CE = higher intensity per case</li><li>Compensation aligned with throughput &amp; value</li><li>Escalation criteria + milestone accountability</li></ul></div>
           </div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="8" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="8"><div class="section-divider__line"></div></div>
 
     <!-- ── PROBLEM 4 ── -->
-    <section id="p4" class="section">
+    <section id="p4" data-order="8" class="section">
       <div class="section__inner">
         <div class="section-label section-label--danger">Problem 4</div>
         <h2 class="headline headline--lg">Delay is <em>cash destruction</em> at scale.</h2>
@@ -211,15 +211,15 @@
             <div><div class="card mb-md"><div class="card__title">$18.84M invested in pre-lit</div><p class="card__text">$4,957 per case before overhead, management, systems, benefits, or occupancy.</p></div><div class="card card--danger"><div class="card__title" style="color:var(--color-danger)">Cash Destruction Scenarios</div><ul class="card__list"><li>20% drift: <strong class="danger">$2.4 million</strong></li><li>45% drift: <strong class="danger">$12.2 million</strong></li><li>75% drift: <strong class="danger">$29.4 million</strong></li></ul></div></div>
           </div>
           <div class="blame"><div class="blame__q">Whose fault is this?</div><div class="blame__a">No one's.</div><div class="blame__r">No engineered case-advancement model exists to control movement from activation to settlement readiness.</div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="9" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="9"><div class="section-divider__line"></div></div>
 
     <!-- ── SOLUTION 4 ── -->
-    <section id="s4" class="section">
+    <section id="s4" data-order="9" class="section">
       <div class="section__inner">
         <div class="solution-label">Solution 4</div>
         <h2 class="headline headline--lg">The <em>Optimus</em> Operating System.</h2>
@@ -232,15 +232,15 @@
             <div class="card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" style="margin-bottom:var(--space-sm)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><div class="card__title">Real-Time Scoring</div><p class="card__text">Tower metrics engine. KPI dashboards. Weekly scorecards. Leadership sees everything.</p></div>
           </div>
           <p class="subtext mt-lg" style="text-align:center;max-width:100%">Combined with MOS, weekly scorecards, and Quarterly Rocks — this creates an <strong>operational pulse</strong> that moves the firm relentlessly forward. <strong class="gold">30-50% skill level increase.</strong></p>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="10" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="10"><div class="section-divider__line"></div></div>
 
     <!-- ── PROBLEM 5 ── -->
-    <section id="p5" class="section">
+    <section id="p5" data-order="10" class="section">
       <div class="section__inner">
         <div class="section-label section-label--danger">Problem 5</div>
         <h2 class="headline headline--lg"><em>800-900 demands</em> sitting with zero follow-up.</h2>
@@ -249,15 +249,15 @@
           <div class="text-center glow-wrap mt-xl" style="position:relative;padding:var(--space-xl)"><div class="glow glow--danger glow--lg"></div><div class="radar radar--danger"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" data-counter="900">0</div><div class="stat-label" style="font-size:var(--text-base)">demands pending with insurers</div><div style="color:var(--color-danger);font-weight:700;font-size:var(--text-lg);margin-top:var(--space-xs)">ZERO follow-up calls</div></div></div>
           <p class="subtext mt-lg" style="text-align:center;max-width:100%">The only follow-up is an occasional email, if even. Most demands are eventually called by an attorney and settled in LIT — <strong>months later than they could have been.</strong></p>
           <div class="blame"><div class="blame__q">Whose fault is this?</div><div class="blame__a">No one's.</div><div class="blame__r">There is no dedicated follow-up function. The structure doesn't assign anyone to actively pursue settlements.</div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="11" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="11"><div class="section-divider__line"></div></div>
 
     <!-- ── SOLUTION 5 ── -->
-    <section id="s5" class="section">
+    <section id="s5" data-order="11" class="section">
       <div class="section__inner">
         <div class="solution-label">Solution 5</div>
         <h2 class="headline headline--lg">The <em>Strategic Resolution</em> Group.</h2>
@@ -275,7 +275,7 @@
             <div class="flow__step flow__step--active">Negotiate</div><div class="flow__arrow">&rarr;</div>
             <div class="flow__step flow__step--active" style="border-color:var(--color-gold);color:var(--color-gold)">Settlement</div>
           </div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="12" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
@@ -283,16 +283,16 @@
     <!-- ═══════════════════════════════════════
          ACT 2: THE OPPORTUNITIES
          ═══════════════════════════════════════ -->
-    <div class="act-header">
+    <div class="act-header" data-order="12">
       <div class="act-label">Now — The Opportunities</div>
       <div class="act-title">Once the engine is <span class="gold">rebuilt.</span></div>
       <div class="act-subtitle">With the structural problems solved, these growth initiatives become possible.</div>
     </div>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="13"><div class="section-divider__line"></div></div>
 
     <!-- OPP 1: BJBJustice.com -->
-    <section id="opp-1" class="section">
+    <section id="opp-1" data-order="13" class="section">
       <div class="section__inner">
         <div class="section-label">Opportunity</div>
         <h2 class="headline headline--lg"><em>BJBJustice.com</em> — own the platform.</h2>
@@ -303,15 +303,15 @@
             <div class="card card--gold"><div class="card__title">Brand Authority</div><p class="card__text">Video-first marketing. Brandon as national thought leader.</p></div>
             <div class="card card--gold"><div class="card__title">National Expansion</div><p class="card__text">Multi-state pages, practice areas. Scale without permission.</p></div>
           </div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="13" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="14"><div class="section-divider__line"></div></div>
 
     <!-- OPP 2: Partnership + Resolve + Assets -->
-    <section id="opp-2" class="section">
+    <section id="opp-2" data-order="14" class="section">
       <div class="section__inner">
         <div class="section-label">Opportunities</div>
         <h2 class="headline headline--lg">New <em>revenue channels.</em></h2>
@@ -322,15 +322,15 @@
             <div class="card"><div class="card__title">BJB Resolve&trade;</div><p class="card__text">Digital dispute resolution. Merge NSA + PIP Arb into automated, scalable platform.</p></div>
             <div class="card"><div class="card__title">Alternative Assets</div><p class="card__text">Pre-foreclosure, surplus recovery, structured settlements. New revenue verticals.</p></div>
           </div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="15" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="15"><div class="section-divider__line"></div></div>
 
     <!-- TARGETS -->
-    <section id="targets" class="section">
+    <section id="targets" data-order="15" class="section">
       <div class="section__inner">
         <div class="section-label">The Destination</div>
         <h2 class="headline headline--lg">What does BJB look like in <em>6 months?</em></h2>
@@ -342,15 +342,135 @@
             <div class="stat-banner__item"><div class="stat-banner__value" data-counter="6" data-prefix="$" data-suffix="M">$0</div><div class="stat-banner__label">monthly settlements</div><div class="stat-banner__sub">from $4M</div></div>
           </div>
           <div class="mt-xl text-center glow-wrap" style="padding:var(--space-xl);position:relative"><div class="glow glow--lg"></div><div class="radar"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div><div style="position:relative;z-index:1"><div class="section-label">Q3 2026</div><div class="stat-number stat-number--huge mt-sm" data-counter="20" data-prefix="$" data-suffix="M">$0</div><div class="stat-label" style="font-size:var(--text-lg)">per month in revenue</div></div></div>
-          <button class="next-btn" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+          <button class="next-btn" data-shows="16" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
     </section>
 
-    <div class="section-divider"><div class="section-divider__line"></div></div>
+    <div class="section-divider" data-order="16"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ CURRENT ORG CHART ═══ -->
+    <section id="current-org" data-order="16" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Structure</div>
+        <h2 class="headline headline--lg">This is the <em>current</em> organization.</h2>
+        <button class="reveal-trigger">Tap to reveal</button>
+        <div class="reveal-content">
+          <div class="org-chart" style="margin-top:var(--space-xl)">
+            <div class="org-card" style="background:rgba(30,60,100,.4);border-color:rgba(100,140,200,.4)"><div class="org-card__name">Brandon J. Broderick</div><div class="org-card__title">Chief Executive Officer</div></div>
+            <div class="org-connector"></div>
+            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
+              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">Ryan Broderick</div><div class="org-card__title">Chief Operating Officer</div></div>
+              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">John Moran</div><div class="org-card__title">Chief Performance Officer</div></div>
+            </div>
+            <div class="org-connector"></div>
+            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
+              <div class="org-card" style="font-size:var(--text-sm)"><div class="org-card__name" style="font-size:var(--text-base)">Frank Scott</div><div class="org-card__title">CFO</div></div>
+              <div class="org-card org-card--primary"><div class="org-card__name">Justin Billingsley</div><div class="org-card__title">Executive Vice President</div></div>
+              <div class="org-card" style="font-size:var(--text-sm)"><div class="org-card__name" style="font-size:var(--text-base)">Lisa Will</div><div class="org-card__title">VP of HR</div></div>
+            </div>
+            <div class="org-connector"></div>
+            <div class="org-card"><div class="org-card__name">Matthew Broderick</div><div class="org-card__title">Vice President</div></div>
+          </div>
+          <button class="next-btn" data-shows="17" aria-label="Next"><span>See what it becomes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" data-order="17"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ NEW ORG CHART ═══ -->
+    <section id="new-org" data-order="17" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Transformation</div>
+        <h2 class="headline headline--lg">This is what it <em>becomes.</em></h2>
+        <button class="reveal-trigger">Tap to reveal the new structure</button>
+        <div class="reveal-content">
+          <!-- Top tier — unchanged -->
+          <div class="org-chart" style="margin-top:var(--space-xl)">
+            <div class="org-card" style="background:rgba(30,60,100,.4);border-color:rgba(100,140,200,.4)"><div class="org-card__name">Brandon J. Broderick</div><div class="org-card__title">Chief Executive Officer</div></div>
+            <div class="org-connector"></div>
+            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
+              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">Ryan Broderick</div><div class="org-card__title">COO</div></div>
+              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">John Moran</div><div class="org-card__title">CPO</div></div>
+            </div>
+            <div class="org-connector"></div>
+            <div class="org-card org-card--primary" style="box-shadow:0 0 30px rgba(201,168,76,.15)"><div class="org-card__name">Justin Billingsley</div><div class="org-card__title">Executive Vice President — Operational Authority</div></div>
+          </div>
+
+          <p class="subtext mt-xl" style="text-align:center;max-width:100%">Under the EVP — the new department structure:</p>
+
+          <!-- Director / Senior Level -->
+          <div class="section-label mt-lg" style="margin-bottom:var(--space-sm)">Directors &amp; Senior Leadership</div>
+          <div class="grid-3" style="gap:var(--space-sm)">
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Marques Burgess</div><div class="card__text" style="font-size:var(--text-xs)">Dir. Customer Development</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Dan Jalil</div><div class="card__text" style="font-size:var(--text-xs)">CTO</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Brittany Hale</div><div class="card__text" style="font-size:var(--text-xs)">Sr. Manager Pre-LIT</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Adam Greenspan</div><div class="card__text" style="font-size:var(--text-xs)">VP Claims (&gt;$100k)</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Kennia Delgado</div><div class="card__text" style="font-size:var(--text-xs)">Paralegal Manager</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Mike Fortunato</div><div class="card__text" style="font-size:var(--text-xs)">Employment Law</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Ken Thayer</div><div class="card__text" style="font-size:var(--text-xs)">Workers Comp Law</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Zachary Terracciano</div><div class="card__text" style="font-size:var(--text-xs)">Recruiting</div></div>
+            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">BJB Dispute Hub</div><div class="card__text" style="font-size:var(--text-xs)">PIP Arbs / NSA</div></div>
+          </div>
+
+          <!-- Manager Level -->
+          <div class="section-label mt-lg" style="margin-bottom:var(--space-sm)">Manager Level</div>
+          <div class="grid-3" style="gap:var(--space-sm)">
+            <div class="card" style="padding:var(--space-md);border-style:dashed"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Intake</div><div class="card__text" style="font-size:var(--text-xs)">TBD</div></div>
+            <div class="card" style="padding:var(--space-md)"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Case Opening</div><div class="card__text" style="font-size:var(--text-xs)">Diane Quintanila</div></div>
+            <div class="card" style="padding:var(--space-md)"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Partner Referrals</div><div class="card__text" style="font-size:var(--text-xs)">Kevin Maleike</div></div>
+            <div class="card" style="padding:var(--space-md);border-style:dashed"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Case Engineering</div><div class="card__text" style="font-size:var(--text-xs)">TBD</div></div>
+            <div class="card" style="padding:var(--space-md);border-style:dashed"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Medical Records</div><div class="card__text" style="font-size:var(--text-xs)">TBD</div></div>
+            <div class="card" style="padding:var(--space-md);border-style:dashed"><div class="card__title" style="font-size:var(--text-sm);margin-bottom:2px">Mgr Strategic Resolution</div><div class="card__text" style="font-size:var(--text-xs)">TBD (&lt;$100k)</div></div>
+          </div>
+          <button class="next-btn" data-shows="18" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" data-order="18"><div class="section-divider__line"></div></div>
+
+    <!-- ═══ JUSTIN'S ROLE ═══ -->
+    <section id="justin" data-order="18" class="section">
+      <div class="section__inner">
+        <div class="section-label">The Leader</div>
+        <h2 class="headline headline--lg">What Justin Billingsley <em>brings</em> to this role.</h2>
+        <button class="reveal-trigger">Tap to reveal</button>
+        <div class="reveal-content">
+          <div class="grid-2 mt-xl">
+            <div class="card card--gold">
+              <div class="card__title">Experience</div>
+              <ul class="card__list">
+                <li>Decades of operational infrastructure experience</li>
+                <li>Built scalable systems and performance engineering</li>
+                <li>SEO, digital marketing, lead generation, domain authority</li>
+                <li>National marketing expansion</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">Proven Execution</div>
+              <ul class="card__list">
+                <li><strong class="gold">889 BOCs</strong> cleared to zero in one month</li>
+                <li>40% of intake calls to offshore — resolved</li>
+                <li>Built the Optimus Operating System</li>
+                <li>MOS framework, workflow engineering, KPI scorecards</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout mt-xl text-center">
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text)">Dogged. Relentless. Pitbull-like execution.</p>
+            <p class="subtext mt-sm" style="margin:var(--space-sm) auto 0">Laser focused on outcomes, accountability, and measurable results. This is exactly what the firm needs at this moment in its evolution.</p>
+          </div>
+          <button class="next-btn" data-shows="19" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" data-order="19"><div class="section-divider__line"></div></div>
 
     <!-- ═══ CONCLUSION ═══ -->
-    <section id="conclusion" class="section section--conclusion section--full-vh flex-center" style="position:relative">
+    <section id="conclusion" data-order="19" class="section section--conclusion section--full-vh flex-center" style="position:relative">
       <div class="particles"><div class="particle" style="left:8%;top:25%;animation-delay:.5s"></div><div class="particle" style="left:45%;top:30%;animation-delay:1s"></div><div class="particle" style="left:78%;top:20%;animation-delay:.2s"></div><div class="particle" style="left:30%;top:85%;animation-delay:1.5s"></div><div class="particle" style="left:88%;top:40%;animation-delay:2.5s"></div></div>
       <div class="section__inner section__inner--narrow text-center" style="position:relative;z-index:1">
         <div class="section-label">The Commitment</div>

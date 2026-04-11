@@ -309,58 +309,39 @@
     });
   }
 
-  // ── Initiative Progression Lock ────────────────────────────────
-  function initProgression() {
-    // Hide all initiatives except #1 on load
-    document.querySelectorAll('section[data-initiative]').forEach(function(section) {
-      var num = parseInt(section.dataset.initiative);
-      if (num > 1) {
-        section.style.display = 'none';
+  // ── Section Lock — progressive reveal ──────────────────────────
+  function initSectionLock() {
+    // Hide everything with data-order > 0
+    document.querySelectorAll('[data-order]').forEach(function(el) {
+      var order = parseInt(el.dataset.order);
+      if (order > 0) {
+        el.style.display = 'none';
       }
     });
-    // Also hide dividers between hidden sections
-    updateDividerVisibility();
 
-    // "Next Initiative" buttons — unlock next initiative group
-    document.querySelectorAll('.next-initiative-btn').forEach(function(btn) {
+    // "Next" buttons reveal the next section in order
+    document.querySelectorAll('.next-btn[data-shows]').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        var unlockNum = parseInt(btn.dataset.unlock);
-        // Show all sections with this initiative number
-        document.querySelectorAll('section[data-initiative="' + unlockNum + '"]').forEach(function(section) {
-          section.style.display = '';
-          section.style.opacity = '0';
-          section.style.transform = 'translateY(30px)';
-          section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        var showOrder = parseInt(btn.dataset.shows);
+        // Show all elements with this data-order
+        document.querySelectorAll('[data-order="' + showOrder + '"]').forEach(function(el) {
+          el.style.display = '';
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
           setTimeout(function() {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
           }, 50);
         });
-        updateDividerVisibility();
-        // Scroll to the first section of the new initiative
-        var firstNew = document.querySelector('section[data-initiative="' + unlockNum + '"]');
-        if (firstNew) {
+        // Scroll to the first revealed element
+        var target = document.querySelector('[data-order="' + showOrder + '"]');
+        if (target) {
           setTimeout(function() {
-            firstNew.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 100);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 150);
         }
-        // Hide the button
-        btn.style.display = 'none';
       });
-    });
-  }
-
-  function updateDividerVisibility() {
-    document.querySelectorAll('.section-divider').forEach(function(div) {
-      var nextSection = div.nextElementSibling;
-      while (nextSection && nextSection.tagName !== 'SECTION') {
-        nextSection = nextSection.nextElementSibling;
-      }
-      if (nextSection && nextSection.style.display === 'none') {
-        div.style.display = 'none';
-      } else {
-        div.style.display = '';
-      }
     });
   }
 
@@ -494,7 +475,7 @@
     initDotNav();
     initScrollToTop();
     initReveals();
-    initProgression();
+    initSectionLock();
     initCounters();
     initRingCharts();
     initClickReveals();
