@@ -387,8 +387,8 @@
       });
     });
 
-    // Next buttons — scroll to next section
-    document.querySelectorAll('.next-btn').forEach(function(btn) {
+    // Next buttons — scroll to next section (only for buttons WITHOUT data-shows)
+    document.querySelectorAll('.next-btn:not([data-shows])').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var currentSection = btn.closest('section');
         var nextSection = currentSection.nextElementSibling;
@@ -396,7 +396,7 @@
         while (nextSection && !nextSection.tagName.match(/SECTION/i)) {
           nextSection = nextSection.nextElementSibling;
         }
-        if (nextSection) {
+        if (nextSection && nextSection.style.display !== 'none') {
           nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
