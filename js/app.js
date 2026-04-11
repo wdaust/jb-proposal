@@ -323,19 +323,19 @@
       document.querySelectorAll('[data-order="' + orderNum + '"]').forEach(function(el) {
         el.style.display = '';
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        el.style.transform = 'translateY(20px) scale(0.99)';
+        el.style.transition = 'opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1)';
         setTimeout(function() {
           el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, 50);
+          el.style.transform = 'translateY(0) scale(1)';
+        }, 80);
       });
-      // Scroll to the first element of this order
+      // Scroll to the first element of this order — delay for render
       var target = document.querySelector('[data-order="' + orderNum + '"]');
       if (target) {
         setTimeout(function() {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 150);
+        }, 300);
       }
     }
 

@@ -478,33 +478,39 @@
   0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.15); }
   50% { box-shadow: 0 0 20px 4px rgba(201,168,76,0.2); }
 }
-.reveal-trigger.is-hidden { display: none; }
-
-/* Hidden content block */
-.reveal-content {
-  max-height: 0;
+.reveal-trigger.is-hidden {
   opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.6s ease;
+}
+
+/* Hidden content block — premium smooth reveal */
+.reveal-content {
+  display: none;
 }
 .reveal-content.is-revealed {
-  max-height: 3000px;
-  opacity: 1;
+  display: block;
 }
-/* Stagger children on reveal */
+/* Stagger children with smooth, deliberate animation */
 .reveal-content.is-revealed > * {
-  animation: reveal-child 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: reveal-child 1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.reveal-content.is-revealed > *:nth-child(1) { animation-delay: 0.05s; }
-.reveal-content.is-revealed > *:nth-child(2) { animation-delay: 0.12s; }
-.reveal-content.is-revealed > *:nth-child(3) { animation-delay: 0.19s; }
-.reveal-content.is-revealed > *:nth-child(4) { animation-delay: 0.26s; }
-.reveal-content.is-revealed > *:nth-child(5) { animation-delay: 0.33s; }
-.reveal-content.is-revealed > *:nth-child(6) { animation-delay: 0.40s; }
+.reveal-content.is-revealed > *:nth-child(1) { animation-delay: 0.08s; }
+.reveal-content.is-revealed > *:nth-child(2) { animation-delay: 0.18s; }
+.reveal-content.is-revealed > *:nth-child(3) { animation-delay: 0.28s; }
+.reveal-content.is-revealed > *:nth-child(4) { animation-delay: 0.38s; }
+.reveal-content.is-revealed > *:nth-child(5) { animation-delay: 0.48s; }
+.reveal-content.is-revealed > *:nth-child(6) { animation-delay: 0.58s; }
+.reveal-content.is-revealed > *:nth-child(7) { animation-delay: 0.68s; }
+.reveal-content.is-revealed > *:nth-child(8) { animation-delay: 0.78s; }
 @keyframes reveal-child {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Next section button */
