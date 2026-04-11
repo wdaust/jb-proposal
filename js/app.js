@@ -388,11 +388,20 @@
         // Hide the trigger button
         btn.classList.add('is-hidden');
 
+        // Smooth scroll up so the section label/headline sits at the top
+        // Find the section-label or headline to scroll to
+        var scrollTarget = section.querySelector('.section-label, .solution-label, .headline');
+        if (scrollTarget) {
+          setTimeout(function() {
+            scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 200);
+        }
+
         // Show next button after a delay
         if (nextBtn) {
           setTimeout(function() {
             nextBtn.classList.add('is-visible');
-          }, 800);
+          }, 1200);
         }
       });
     });
