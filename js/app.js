@@ -394,11 +394,25 @@
         btn.classList.add('is-hidden');
 
         // Smooth scroll up so the section label/headline sits at the top
+        // 1.5 second ease-out scroll using GSAP if available, otherwise requestAnimationFrame
         var scrollTarget = section.querySelector('.section-label, .solution-label, .headline');
         if (scrollTarget) {
-          setTimeout(function() {
-            scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 1500);
+          var targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 32;
+          var startY = window.scrollY;
+          var diff = targetY - startY;
+          var duration = 1500;
+          var startTime = performance.now();
+
+          function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+          function scrollStep(currentTime) {
+            var elapsed = currentTime - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var easedProgress = easeOutCubic(progress);
+            window.scrollTo(0, startY + diff * easedProgress);
+            if (progress < 1) requestAnimationFrame(scrollStep);
+          }
+          requestAnimationFrame(scrollStep);
         }
 
         // Show next button after a delay
