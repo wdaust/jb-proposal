@@ -346,9 +346,14 @@
         // Show all elements with this data-order
         showOrder_fn(showOrder);
 
-        // If the revealed element is an act-header (not a section), also show the next order
-        var revealed = document.querySelector('[data-order="' + showOrder + '"]');
-        if (revealed && !revealed.tagName.match(/SECTION/i)) {
+        // If the revealed element is an act-header (not a section or divider), also show the next order
+        // This ensures act headers auto-reveal the first section that follows them
+        var allRevealed = document.querySelectorAll('[data-order="' + showOrder + '"]');
+        var hasActHeader = false;
+        allRevealed.forEach(function(el) {
+          if (el.classList.contains('act-header')) hasActHeader = true;
+        });
+        if (hasActHeader) {
           showOrder_fn(showOrder + 1);
         }
       });
@@ -389,12 +394,11 @@
         btn.classList.add('is-hidden');
 
         // Smooth scroll up so the section label/headline sits at the top
-        // Find the section-label or headline to scroll to
         var scrollTarget = section.querySelector('.section-label, .solution-label, .headline');
         if (scrollTarget) {
           setTimeout(function() {
             scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 200);
+          }, 1500);
         }
 
         // Show next button after a delay
