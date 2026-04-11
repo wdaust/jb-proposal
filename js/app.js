@@ -319,27 +319,37 @@
       }
     });
 
+    function showOrder_fn(orderNum) {
+      document.querySelectorAll('[data-order="' + orderNum + '"]').forEach(function(el) {
+        el.style.display = '';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        setTimeout(function() {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 50);
+      });
+      // Scroll to the first element of this order
+      var target = document.querySelector('[data-order="' + orderNum + '"]');
+      if (target) {
+        setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    }
+
     // "Next" buttons reveal the next section in order
     document.querySelectorAll('.next-btn[data-shows]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var showOrder = parseInt(btn.dataset.shows);
         // Show all elements with this data-order
-        document.querySelectorAll('[data-order="' + showOrder + '"]').forEach(function(el) {
-          el.style.display = '';
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(30px)';
-          el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-          setTimeout(function() {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-          }, 50);
-        });
-        // Scroll to the first revealed element
-        var target = document.querySelector('[data-order="' + showOrder + '"]');
-        if (target) {
-          setTimeout(function() {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 150);
+        showOrder_fn(showOrder);
+
+        // If the revealed element is an act-header (not a section), also show the next order
+        var revealed = document.querySelector('[data-order="' + showOrder + '"]');
+        if (revealed && !revealed.tagName.match(/SECTION/i)) {
+          showOrder_fn(showOrder + 1);
         }
       });
     });
