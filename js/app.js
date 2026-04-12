@@ -309,7 +309,7 @@
     });
   }
 
-  // ── Smooth Scroll — 1.5s ease-in-out to section label ──────────
+  // ── Smooth Scroll — 3s ease-out-expo to section label ──────────
   function smoothScrollTo(section) {
     var target = section.querySelector('.section-label, .solution-label');
     if (!target) target = section.querySelector('.headline');
@@ -318,7 +318,7 @@
     var startY = window.scrollY;
     var diff = targetY - startY;
     if (Math.abs(diff) < 5) return;
-    var duration = 1500;
+    var duration = 3000;
     var start = performance.now();
     function easeOutExpo(t) {
       return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
