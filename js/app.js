@@ -345,17 +345,6 @@
         var showOrder = parseInt(btn.dataset.shows);
         // Show all elements with this data-order
         showOrder_fn(showOrder);
-
-        // If the revealed element is an act-header (not a section or divider), also show the next order
-        // This ensures act headers auto-reveal the first section that follows them
-        var allRevealed = document.querySelectorAll('[data-order="' + showOrder + '"]');
-        var hasActHeader = false;
-        allRevealed.forEach(function(el) {
-          if (el.classList.contains('act-header')) hasActHeader = true;
-        });
-        if (hasActHeader) {
-          showOrder_fn(showOrder + 1);
-        }
       });
     });
   }
@@ -393,27 +382,28 @@
         // Hide the trigger button
         btn.classList.add('is-hidden');
 
-        // Smooth scroll up so the section label/headline sits at the top
-        // 1.5 second ease-out scroll using GSAP if available, otherwise requestAnimationFrame
-        var scrollTarget = section.querySelector('.section-label, .solution-label, .headline');
-        if (scrollTarget) {
-          var targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 32;
-          var startY = window.scrollY;
-          var diff = targetY - startY;
-          var duration = 1500;
-          var startTime = performance.now();
-
-          function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-
-          function scrollStep(currentTime) {
-            var elapsed = currentTime - startTime;
-            var progress = Math.min(elapsed / duration, 1);
-            var easedProgress = easeOutCubic(progress);
-            window.scrollTo(0, startY + diff * easedProgress);
-            if (progress < 1) requestAnimationFrame(scrollStep);
+        // Smooth scroll up so the gold divider/label sits at the top
+        // Wait 100ms for layout to settle, then 1.5s ease-out scroll
+        setTimeout(function() {
+          // Find the section's divider (the gold line above it) or the section-label
+          var scrollTarget = section.querySelector('.section-label, .solution-label');
+          if (!scrollTarget) scrollTarget = section.querySelector('.headline');
+          if (scrollTarget) {
+            var targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 40;
+            var startY = window.scrollY;
+            var diff = targetY - startY;
+            if (Math.abs(diff) < 10) return; // already there
+            var duration = 1500;
+            var start = performance.now();
+            function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+            function step(now) {
+              var p = Math.min((now - start) / duration, 1);
+              window.scrollTo(0, startY + diff * easeOut(p));
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
           }
-          requestAnimationFrame(scrollStep);
-        }
+        }, 100);
 
         // Show next button after a delay
         if (nextBtn) {
