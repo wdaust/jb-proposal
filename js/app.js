@@ -309,6 +309,27 @@
     });
   }
 
+  // ── Smooth Scroll — 1.5s ease-in-out to section label ──────────
+  function smoothScrollTo(section) {
+    var target = section.querySelector('.section-label, .solution-label');
+    if (!target) target = section.querySelector('.headline');
+    if (!target) target = section;
+    var targetY = target.getBoundingClientRect().top + window.scrollY - 40;
+    var startY = window.scrollY;
+    var diff = targetY - startY;
+    if (Math.abs(diff) < 5) return;
+    var duration = 1500;
+    var start = performance.now();
+    function easeInOut(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    (function step(now) {
+      var p = Math.min((now - start) / duration, 1);
+      window.scrollTo(0, startY + diff * easeInOut(p));
+      if (p < 1) requestAnimationFrame(step);
+    })(start);
+  }
+
   // ── Section Lock — progressive reveal ──────────────────────────
   function initSectionLock() {
     // Hide everything with data-order > 0
@@ -330,12 +351,28 @@
           el.style.transform = 'translateY(0) scale(1)';
         }, 80);
       });
-      // Scroll to the first element of this order — delay for render
+      // Scroll to the first element of this order
       var target = document.querySelector('[data-order="' + orderNum + '"]');
       if (target) {
         setTimeout(function() {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300);
+          if (target.tagName === 'SECTION') {
+            smoothScrollTo(target);
+          } else {
+            // For act headers and dividers, scroll to the element itself
+            var y = target.getBoundingClientRect().top + window.scrollY - 40;
+            var startY = window.scrollY;
+            var diff = y - startY;
+            if (Math.abs(diff) < 5) return;
+            var duration = 1500;
+            var start = performance.now();
+            function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
+            (function step(now) {
+              var p = Math.min((now - start) / duration, 1);
+              window.scrollTo(0, startY + diff * easeInOut(p));
+              if (p < 1) requestAnimationFrame(step);
+            })(start);
+          }
+        }, 100);
       }
     }
 
@@ -387,25 +424,8 @@
           nextBtn.classList.add('is-visible');
         }
 
-        // Single smooth 1.5s ease-out scroll — starts on next frame
-        requestAnimationFrame(function() {
-          var scrollTarget = section.querySelector('.section-label, .solution-label');
-          if (!scrollTarget) scrollTarget = section.querySelector('.headline');
-          if (scrollTarget) {
-            var targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 40;
-            var startY = window.scrollY;
-            var diff = targetY - startY;
-            if (Math.abs(diff) < 10) return;
-            var duration = 1500;
-            var start = performance.now();
-            function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-            (function step(now) {
-              var p = Math.min((now - start) / duration, 1);
-              window.scrollTo(0, startY + diff * easeOut(p));
-              if (p < 1) requestAnimationFrame(step);
-            })(start);
-          }
-        });
+        // Smooth 1.5s ease-in-out scroll to section label — starts immediately
+        smoothScrollTo(section);
       });
     });
 
