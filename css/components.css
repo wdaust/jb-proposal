@@ -530,6 +530,7 @@
   transition: all 0.3s;
 }
 .next-btn.is-visible { display: inline-flex; }
+.reveal-content .next-btn.is-visible { display: inline-flex; }
 .next-btn:hover {
   border-color: var(--color-gold-dim);
   color: var(--color-gold);

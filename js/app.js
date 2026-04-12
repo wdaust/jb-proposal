@@ -382,35 +382,30 @@
         // Hide the trigger button
         btn.classList.add('is-hidden');
 
-        // Smooth scroll up so the gold divider/label sits at the top
-        // Wait 100ms for layout to settle, then 1.5s ease-out scroll
-        setTimeout(function() {
-          // Find the section's divider (the gold line above it) or the section-label
+        // Show next button immediately (it animates in with the stagger)
+        if (nextBtn) {
+          nextBtn.classList.add('is-visible');
+        }
+
+        // Single smooth 1.5s ease-out scroll — starts on next frame
+        requestAnimationFrame(function() {
           var scrollTarget = section.querySelector('.section-label, .solution-label');
           if (!scrollTarget) scrollTarget = section.querySelector('.headline');
           if (scrollTarget) {
             var targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 40;
             var startY = window.scrollY;
             var diff = targetY - startY;
-            if (Math.abs(diff) < 10) return; // already there
+            if (Math.abs(diff) < 10) return;
             var duration = 1500;
             var start = performance.now();
             function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-            function step(now) {
+            (function step(now) {
               var p = Math.min((now - start) / duration, 1);
               window.scrollTo(0, startY + diff * easeOut(p));
               if (p < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
+            })(start);
           }
-        }, 100);
-
-        // Show next button after a delay
-        if (nextBtn) {
-          setTimeout(function() {
-            nextBtn.classList.add('is-visible');
-          }, 1200);
-        }
+        });
       });
     });
 
