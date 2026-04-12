@@ -365,7 +365,7 @@
             if (Math.abs(diff) < 5) return;
             var duration = 1500;
             var start = performance.now();
-            function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
+            function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
             (function step(now) {
               var p = Math.min((now - start) / duration, 1);
               window.scrollTo(0, startY + diff * easeOutExpo(p));
