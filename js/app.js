@@ -187,6 +187,7 @@
     }
 
     gsap.registerPlugin(ScrollTrigger);
+    if (typeof ScrollToPlugin !== 'undefined') gsap.registerPlugin(ScrollToPlugin);
 
     // Smooth defaults
     gsap.defaults({ ease: 'power3.out' });
@@ -309,25 +310,35 @@
     });
   }
 
-  // ── Smooth Scroll — 3s ease-out-expo to section label ──────────
-  function smoothScrollTo(section) {
+  // ── Smooth Scroll — uses GSAP if available for buttery smoothness ──
+  function smoothScrollTo(section, dur) {
     var target = section.querySelector('.section-label, .solution-label');
     if (!target) target = section.querySelector('.headline');
     if (!target) target = section;
-    var targetY = target.getBoundingClientRect().top + window.scrollY - 40;
-    var startY = window.scrollY;
-    var diff = targetY - startY;
-    if (Math.abs(diff) < 5) return;
-    var duration = 3000;
-    var start = performance.now();
-    function easeOutExpo(t) {
-      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    var duration = dur || 3;
+
+    if (typeof gsap !== 'undefined') {
+      // GSAP handles scroll much smoother — no layout jank
+      gsap.to(window, {
+        scrollTo: { y: target, offsetY: 40 },
+        duration: duration,
+        ease: 'expo.out'
+      });
+    } else {
+      // Fallback: manual rAF scroll
+      var targetY = target.getBoundingClientRect().top + window.scrollY - 40;
+      var startY = window.scrollY;
+      var diff = targetY - startY;
+      if (Math.abs(diff) < 5) return;
+      var ms = duration * 1000;
+      var start = performance.now();
+      function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+      (function step(now) {
+        var p = Math.min((now - start) / ms, 1);
+        window.scrollTo(0, startY + diff * easeOutExpo(p));
+        if (p < 1) requestAnimationFrame(step);
+      })(start);
     }
-    (function step(now) {
-      var p = Math.min((now - start) / duration, 1);
-      window.scrollTo(0, startY + diff * easeOutExpo(p));
-      if (p < 1) requestAnimationFrame(step);
-    })(start);
   }
 
   // ── Section Lock — progressive reveal ──────────────────────────
@@ -356,21 +367,11 @@
       if (target) {
         setTimeout(function() {
           if (target.tagName === 'SECTION') {
-            smoothScrollTo(target);
+            smoothScrollTo(target, 2);
+          } else if (typeof gsap !== 'undefined') {
+            gsap.to(window, { scrollTo: { y: target, offsetY: 40 }, duration: 2, ease: 'expo.out' });
           } else {
-            // For act headers and dividers, scroll to the element itself
-            var y = target.getBoundingClientRect().top + window.scrollY - 40;
-            var startY = window.scrollY;
-            var diff = y - startY;
-            if (Math.abs(diff) < 5) return;
-            var duration = 1500;
-            var start = performance.now();
-            function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
-            (function step(now) {
-              var p = Math.min((now - start) / duration, 1);
-              window.scrollTo(0, startY + diff * easeOutExpo(p));
-              if (p < 1) requestAnimationFrame(step);
-            })(start);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }, 100);
       }
