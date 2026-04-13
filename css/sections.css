@@ -3,7 +3,7 @@
    ================================ */
 .section--entrance {
   background: var(--color-bg);
-  z-index: var(--z-entrance);
+  z-index: var(--z-base);
 }
 
 .entrance-logo {
