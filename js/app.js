@@ -313,26 +313,45 @@
   // ── Row-by-Row Table Reveal ────────────────────────────────────
   function initRowReveal() {
     document.querySelectorAll('.reveal-row-btn').forEach(function(btn) {
+      var currentGroup = 0;
       btn.addEventListener('click', function() {
         var table = btn.closest('.section__inner').querySelector('.cost-table');
         if (!table) return;
-        var hidden = table.querySelector('.cost-row-hidden');
-        if (hidden) {
-          hidden.classList.remove('cost-row-hidden');
-          hidden.classList.add('cost-row-visible');
-          // Trigger counters in the revealed row
-          hidden.querySelectorAll('[data-counter]').forEach(function(el) {
+
+        // Find the next group number to reveal
+        currentGroup++;
+        var rows = table.querySelectorAll('[data-rgroup="' + currentGroup + '"]');
+
+        if (rows.length === 0) {
+          // No more groups — done
+          btn.style.display = 'none';
+          var nextBtn = btn.closest('.reveal-content').querySelector('.next-btn');
+          if (nextBtn) nextBtn.classList.add('is-visible');
+          return;
+        }
+
+        // Reveal all rows in this group with stagger
+        rows.forEach(function(row, i) {
+          row.classList.remove('cost-row-hidden');
+          row.classList.add('cost-row-visible');
+          row.style.animationDelay = (i * 0.08) + 's';
+          // Trigger counters
+          row.querySelectorAll('[data-counter]').forEach(function(el) {
             if (!el.dataset.animated) {
               animateCounter(el);
               el.dataset.animated = 'true';
             }
           });
-        }
-        // If no more hidden rows, hide the button and show the Next btn
-        if (!table.querySelector('.cost-row-hidden')) {
-          btn.style.display = 'none';
-          var nextBtn = btn.closest('.reveal-content').querySelector('.next-btn');
-          if (nextBtn) nextBtn.classList.add('is-visible');
+        });
+
+        // If no more groups after this, hide button and show Next
+        var nextGroup = table.querySelector('[data-rgroup="' + (currentGroup + 1) + '"]');
+        if (!nextGroup) {
+          setTimeout(function() {
+            btn.style.display = 'none';
+            var nextBtn = btn.closest('.reveal-content').querySelector('.next-btn');
+            if (nextBtn) nextBtn.classList.add('is-visible');
+          }, 600);
         }
       });
     });

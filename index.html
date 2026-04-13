@@ -156,81 +156,77 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="cost-row-hidden">
-                <td>Delay (includes case decay)</td>
-                <td style="color:var(--color-gold)">20%</td>
-                <td style="color:var(--color-gold)">45%</td>
-                <td style="color:var(--color-danger)">75%</td>
-              </tr>
-              <tr class="cost-row-hidden">
+              <!-- Group 1: first 4 rows shown together -->
+              <tr class="cost-row-hidden" data-rgroup="1">
                 <td>Additional Days Past 6mo</td>
                 <td>36</td>
                 <td>81</td>
                 <td>135</td>
               </tr>
-              <tr class="cost-row-hidden">
+              <tr class="cost-row-hidden" data-rgroup="1">
                 <td>Case Manager Cost</td>
                 <td>$492</td>
                 <td>$1,108</td>
                 <td>$1,846</td>
               </tr>
-              <tr class="cost-row-hidden">
+              <tr class="cost-row-hidden" data-rgroup="1">
                 <td>Case Admin Cost</td>
                 <td>$39</td>
                 <td>$88</td>
                 <td>$147</td>
               </tr>
-              <tr class="cost-row-hidden">
+              <tr class="cost-row-hidden" data-rgroup="1">
                 <td>Other Direct Cost</td>
                 <td>$100</td>
                 <td>$225</td>
                 <td>$375</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__highlight">
+              <!-- Group 2: Cost of Delay summary -->
+              <tr class="cost-row-hidden cost-table__highlight" data-rgroup="2">
                 <td>Cost of Delay per Case</td>
                 <td>$632</td>
                 <td>$1,421</td>
                 <td>$2,368</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
-              <tr class="cost-row-hidden">
+              <!-- Group 3: Fee drop + Loss of Sale -->
+              <tr class="cost-row-hidden" data-rgroup="3">
                 <td>Fee Drop-Off Rate</td>
                 <td>—</td>
                 <td>10%</td>
                 <td style="color:var(--color-danger)">30%</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__danger">
+              <tr class="cost-row-hidden cost-table__danger" data-rgroup="3">
                 <td>Loss of Sale</td>
                 <td>$0</td>
                 <td>$1,793</td>
                 <td>$5,378</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
-              <tr class="cost-row-hidden cost-table__highlight">
+              <!-- Group 4: Opportunity Cost per Case -->
+              <tr class="cost-row-hidden cost-table__highlight" data-rgroup="4">
                 <td>Opportunity Cost per Case</td>
                 <td>$632</td>
                 <td>$3,213</td>
                 <td>$7,746</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
-              <tr class="cost-row-hidden">
+              <!-- Group 5: Full portfolio numbers -->
+              <tr class="cost-row-hidden" data-rgroup="5">
                 <td>Cost of Delay — Full Portfolio</td>
                 <td>$2,399,824</td>
                 <td>$5,399,603</td>
                 <td>$8,999,339</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__danger">
+              <tr class="cost-row-hidden cost-table__danger" data-rgroup="5">
                 <td>Opportunity Cost — Full Portfolio</td>
                 <td>$2,399,824</td>
                 <td>$12,211,255</td>
                 <td style="font-size:var(--text-base)">$29,434,295</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
-              <tr class="cost-row-hidden cost-table__mega">
+              <!-- Group 6: Final mega numbers (shown together) -->
+              <tr class="cost-row-hidden cost-table__mega" data-rgroup="6">
                 <td>Cost of Delay per Case per Day</td>
                 <td colspan="3" style="text-align:center">$17.54</td>
               </tr>
-              <tr class="cost-row-hidden cost-table__mega">
+              <tr class="cost-row-hidden cost-table__mega" data-rgroup="6">
                 <td>Cost of Delay per Day — ALL Inventory</td>
                 <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$66,662</td>
               </tr>
