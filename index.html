@@ -47,7 +47,7 @@
     <section id="entrance" data-order="0" class="section section--entrance section--full-vh flex-center" style="position:relative;">
       <div class="text-center" style="display:flex;flex-direction:column;align-items:center;">
         <div class="entrance-logo" style="margin-bottom:var(--space-xl);">
-          <img src="assets/svg/beard.svg" alt="" style="width:130px;height:auto;opacity:0.9;">
+          <img src="assets/svg/beard.svg" alt="" style="width:160px;height:auto;opacity:0.15;">
         </div>
         <div class="entrance-rule" style="margin-bottom:var(--space-lg);"></div>
         <div class="entrance-subtitle" style="font-size:var(--text-xs);letter-spacing:0.35em;color:var(--color-text-dim);font-weight:600;text-transform:uppercase;">A Proposal by</div>
@@ -87,11 +87,11 @@
         <rect x="510" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
         <rect x="670" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
 
-        <!-- Barrier walls between silos -->
-        <rect x="167" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
-        <rect x="327" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
-        <rect x="487" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
-        <rect x="647" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
+        <!-- Barrier walls between silos — large, centered -->
+        <rect x="162" y="25" width="12" height="210" fill="#c0392b" opacity="0.5" rx="2"/>
+        <rect x="322" y="25" width="12" height="210" fill="#c0392b" opacity="0.5" rx="2"/>
+        <rect x="482" y="25" width="12" height="210" fill="#c0392b" opacity="0.5" rx="2"/>
+        <rect x="642" y="25" width="12" height="210" fill="#c0392b" opacity="0.5" rx="2"/>
 
         <!-- Department labels -->
         <text x="95" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">INTAKE</text>
@@ -143,7 +143,7 @@
             <div class="card text-center"><div class="stat-number" data-counter="3800">0</div><div class="stat-label">active pre-lit cases</div></div>
             <div class="card card--danger text-center"><div class="stat-number" style="color:var(--color-danger)" data-counter="2074">0</div><div class="stat-label">cases <strong>past 6 months</strong></div></div>
           </div>
-          <p class="subtext mt-sm" style="font-size:var(--text-xs);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.7;">For detailed cost model, see full analysis &rarr;</a></p>
+          <p class="subtext mt-sm" style="font-size:var(--text-sm);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.9;">For detailed cost model, see full analysis &rarr;</a></p>
           <p class="subtext mt-lg">~2,000 cases at risk of losing <strong>50-80% of their value.</strong> Here's what that costs:</p>
 
           <!-- Cost Overrun Table — row by row reveal -->
@@ -229,7 +229,7 @@
               </tr>
               <tr class="cost-row-hidden cost-table__mega" data-rgroup="6">
                 <td>Cost of Delay per Day — Cases Past 6 Months</td>
-                <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$36,373</td>
+                <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$36,383</td>
               </tr>
             </tbody>
           </table>
@@ -260,7 +260,7 @@
         <button class="reveal-trigger">Tap to reveal the evidence</button>
         <div class="reveal-content">
           <div class="grid-2 mt-xl" style="align-items:center">
-            <div class="text-center glow-wrap" style="position:relative;padding:var(--space-lg);min-width:320px"><div class="glow glow--danger glow--lg"></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" style="color:var(--color-danger);min-width:280px;display:inline-block" data-counter="36373" data-prefix="$" data-suffix="/day">$0/day</div><div class="stat-label" style="font-size:var(--text-base)"><strong>wasted overhead</strong></div></div></div>
+            <div class="text-center glow-wrap" style="position:relative;padding:var(--space-lg);min-width:320px"><div class="glow glow--danger glow--lg"></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" style="color:var(--color-danger);min-width:280px;display:inline-block" data-counter="36383" data-prefix="$" data-suffix="/day">$0/day</div><div class="stat-label" style="font-size:var(--text-base)"><strong>wasted overhead</strong></div></div></div>
             <div class="card card--danger"><div class="card__title" style="color:var(--color-danger)">What This Means</div><p class="card__text">The firm is paying people to care for cases that shouldn't still be here. Every day these cases sit, the firm burns cash on staff time, systems, overhead, and management — for files that aren't progressing toward settlement.</p></div>
           </div>
           <button class="next-btn" data-shows="4" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
@@ -341,7 +341,7 @@
           <div class="problem-tracker__item problem-tracker__item--active">5</div>
         </div>
         <div class="section-label section-label--danger">Problem 5</div>
-        <h2 class="headline headline--lg"><em>799 demands</em> with zero follow-up.</h2>
+        <h2 class="headline headline--lg">Demands with <em>zero follow-up.</em></h2>
         <button class="reveal-trigger">Tap to reveal the evidence</button>
         <div class="reveal-content">
           <div class="text-center glow-wrap mt-xl" style="position:relative;padding:var(--space-xl)"><div class="glow glow--danger glow--lg"></div><div class="radar radar--danger"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" data-counter="799">0</div><div class="stat-label" style="font-size:var(--text-base)">demands pending <span style="font-size:var(--text-xs);color:var(--color-text-dim);font-weight:400;">(as of 4.13)</span></div><div style="color:var(--color-danger);font-weight:700;font-size:var(--text-lg);margin-top:var(--space-xs)">Only follow-up has been email</div></div></div>
@@ -356,6 +356,43 @@
       <div class="act-label">The Solutions</div>
       <div class="act-title">Evolve to a <span class="gold">workflow-based structure.</span></div>
       <div class="act-subtitle" style="text-align:center">Function-based: work organized by role. Everyone owns a piece, no one owns the outcome.<br><br><strong style="color:var(--color-text)">Workflow-based: work organized by outcome.</strong> Engineered progression. Accountability at every stage.</div>
+
+      <!-- Workflow-based connected graphic -->
+      <svg viewBox="0 0 820 300" style="width:100%;max-width:750px;margin-top:var(--space-xl);" xmlns="http://www.w3.org/2000/svg">
+        <!-- Connected boxes — steps in the process -->
+        <rect x="30" y="40" width="130" height="160" rx="8" fill="#141414" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+        <rect x="190" y="40" width="130" height="160" rx="8" fill="#141414" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+        <rect x="350" y="40" width="130" height="160" rx="8" fill="#141414" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+        <rect x="510" y="40" width="130" height="160" rx="8" fill="#141414" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+        <rect x="670" y="40" width="130" height="160" rx="8" fill="#141414" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+
+        <!-- Gold arrow connectors -->
+        <polygon points="164,115 180,105 180,110 186,110 186,120 180,120 180,125" fill="#c9a84c" opacity="0.7"/>
+        <polygon points="324,115 340,105 340,110 346,110 346,120 340,120 340,125" fill="#c9a84c" opacity="0.7"/>
+        <polygon points="484,115 500,105 500,110 506,110 506,120 500,120 500,125" fill="#c9a84c" opacity="0.7"/>
+        <polygon points="644,115 660,105 660,110 666,110 666,120 660,120 660,125" fill="#c9a84c" opacity="0.7"/>
+
+        <!-- Step labels -->
+        <text x="95" y="85" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="10" font-weight="700" opacity="0.6">STEP 1</text>
+        <text x="95" y="115" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">INTAKE</text>
+        <text x="255" y="85" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="10" font-weight="700" opacity="0.6">STEP 2</text>
+        <text x="255" y="115" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">CASE</text>
+        <text x="255" y="132" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">MGMT</text>
+        <text x="415" y="85" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="10" font-weight="700" opacity="0.6">STEP 3</text>
+        <text x="415" y="115" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">MEDICAL</text>
+        <text x="415" y="132" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">RECORDS</text>
+        <text x="575" y="85" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="10" font-weight="700" opacity="0.6">STEP 4</text>
+        <text x="575" y="115" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">PRE-LIT</text>
+        <text x="575" y="132" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">MGMT</text>
+        <text x="735" y="85" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="10" font-weight="700" opacity="0.6">STEP 5</text>
+        <text x="735" y="115" text-anchor="middle" fill="#e8e8e8" font-family="Inter,sans-serif" font-size="13" font-weight="600">SETTLEMENT</text>
+
+        <!-- Solid gold connected line -->
+        <line x1="30" y1="240" x2="800" y2="240" stroke="#c9a84c" stroke-width="2" opacity="0.6"/>
+        <text x="410" y="270" text-anchor="middle" fill="#c9a84c" font-family="Inter,sans-serif" font-size="12" font-weight="600" letter-spacing="0.15em">CLIENT JOURNEY — CONNECTED</text>
+      </svg>
+      <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-md);text-align:center;max-width:600px;">Now you can tell <strong style="color:var(--color-text)">exactly who is accountable</strong> when there's an issue in the line.</p>
+
       <button class="next-btn" data-shows="8" aria-label="Next" style="display:inline-flex;margin-top:var(--space-xl);"><span>See the solutions</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
     </div>
 
@@ -412,7 +449,7 @@
             </div>
           </div>
 
-          <p class="subtext mt-lg" style="text-align:center;max-width:100%;font-size:var(--text-xs);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.7;">Full Elite Case Manager Task Force document &rarr;</a></p>
+          <p class="subtext mt-lg" style="text-align:center;max-width:100%;font-size:var(--text-sm);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.9;">Full Elite Case Manager Task Force document &rarr;</a></p>
           <button class="next-btn" data-shows="9" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
@@ -452,7 +489,7 @@
               <ul class="card__list"><li>Settlement velocity tracking per adjuster</li><li>Adjuster intelligence: who settles fast, who undervalues</li><li>Negotiation ladder with offer tracking</li><li>Pipeline visibility — nothing stalls</li></ul>
             </div>
           </div>
-          <p class="subtext mt-lg" style="text-align:center;max-width:100%;font-size:var(--text-xs);"><a href="https://brandonjbroderick-my.sharepoint.com/:w:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7B514CF82F-1841-42A2-AD97-CC7CFD4629BE%7D&file=Strategic%20Resolution%20Group.docx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.7;">Full Strategic Resolution Group document &rarr;</a></p>
+          <p class="subtext mt-lg" style="text-align:center;max-width:100%;font-size:var(--text-sm);"><a href="https://brandonjbroderick-my.sharepoint.com/:w:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7B514CF82F-1841-42A2-AD97-CC7CFD4629BE%7D&file=Strategic%20Resolution%20Group.docx&fromShare=true&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.9;">Full Strategic Resolution Group document &rarr;</a></p>
           <button class="next-btn" data-shows="10" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
@@ -461,24 +498,41 @@
     <!-- ═══ OPPORTUNITIES HEADER ═══ -->
     <div class="act-header" data-order="10" style="min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center">
       <div class="act-label">The Opportunities</div>
-      <div class="act-title">As we rebuild the <span class="gold">engine.</span></div>
-      <div class="act-subtitle" style="text-align:center">We are proposing that we tactically launch on these opportunities.</div>
+      <div class="act-title">As I rebuild the <span class="gold">engine.</span></div>
+      <div class="act-subtitle" style="text-align:center">I am proposing that I tactically launch on these opportunities.</div>
       <button class="next-btn" data-shows="11" aria-label="Next" style="display:inline-flex;margin-top:var(--space-xl);"><span>See the opportunities</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
     </div>
 
-    <div class="section-divider" data-order="11"><div class="section-divider__line"></div></div>
+        <div class="section-divider" data-order="11"><div class="section-divider__line"></div></div>
 
-    <!-- ═══ OPP 1A: REFERRAL MARKETPLACE ═══ -->
-    <section id="opp-1a" data-order="11" class="section section--full-vh flex-center">
+    <!-- ═══ OPP 1A: BJBJUSTICE.COM ═══ -->
+    <section id="opp-1a" data-order="11" class="section section--full-vh" style="align-items:flex-start;padding-top:var(--space-2xl);">
       <div class="section__inner">
-        <div class="section-label">Opportunity 1 — BJBJustice.com</div>
-        <h2 class="headline headline--lg">The <em>Legal Referral Marketplace.</em></h2>
-        <p class="subtext mt-sm">Medical Marketing Group becomes the Partnership Marketing Group.</p>
+        <div class="section-label">Opportunity 1 — Part A</div>
+        <h2 class="headline headline--lg"><em>BJBJustice.com</em> — The Marketing Engine.</h2>
+        <p class="subtext mt-sm">A firm-owned marketing website that BJB owns and controls. No more third-party dependency.</p>
         <button class="reveal-trigger">Tap to reveal</button>
         <div class="reveal-content">
           <div class="grid-2 mt-xl">
-            <div class="card card--danger"><div class="card__title" style="color:var(--color-danger)">The Problem</div><p class="card__text">Fragmented referral process. No centralized platform. Partners and firms have no visibility into referred cases. No automated acceptance criteria.</p></div>
-            <div class="card card--gold"><div class="card__title">The Solution</div><ul class="card__list"><li>Platform where firms and providers <strong>login and refer cases</strong></li><li>BJB can also handoff and refer out</li><li>Separate link, separate DB on BJBJustice.com</li><li>Lawyer login to see all referred cases</li><li><strong class="gold">Auto accept/reject</strong> based on criteria</li></ul></div>
+            <div class="card card--danger">
+              <div class="card__title" style="color:var(--color-danger)">Problems Being Solved</div>
+              <ul class="card__list">
+                <li>Firm does not own or control its website</li>
+                <li>100% dependency on third-party vendor</li>
+                <li>No control over SEO, domain authority, or lead data</li>
+                <li>National expansion impossible without ownership</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">What BJBJustice.com Delivers</div>
+              <ul class="card__list">
+                <li>Firm-owned national website and digital asset</li>
+                <li>SEO-driven content, geo-targeted landing pages</li>
+                <li>Video-first marketing — Brandon as national thought leader</li>
+                <li>Multi-state expansion infrastructure</li>
+                <li>Domain authority that compounds over time</li>
+              </ul>
+            </div>
           </div>
           <button class="next-btn" data-shows="12" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
@@ -487,16 +541,58 @@
 
     <div class="section-divider" data-order="12"><div class="section-divider__line"></div></div>
 
-    <!-- ═══ OPP 1B: RESOLVE PORTAL ═══ -->
-    <section id="opp-1b" data-order="12" class="section section--full-vh flex-center">
+    <!-- ═══ OPP 1B: BJB HUB ═══ -->
+    <section id="opp-1b" data-order="12" class="section section--full-vh" style="align-items:flex-start;padding-top:var(--space-2xl);">
       <div class="section__inner">
-        <div class="section-label">Opportunity 1 — BJBJustice.com</div>
-        <h2 class="headline headline--lg">The <em>Resolve Portal.</em></h2>
+        <div class="section-label">Opportunity 1 — Part B</div>
+        <h2 class="headline headline--lg">The <em>BJB HUB.</em></h2>
+        <p class="subtext mt-sm">A multi-portal platform connecting legal partners, medical providers, arbitrators, and insurance companies.</p>
         <button class="reveal-trigger">Tap to reveal</button>
         <div class="reveal-content">
           <div class="grid-2 mt-xl">
-            <div class="card card--gold"><div class="card__title">Dispute Resolution Hub</div><ul class="card__list"><li>PIP Arbitrations</li><li>No Surprises Act (NSA)</li><li>SBL Arbitrations</li><li>Other arbitration models</li><li>Digital submission and tracking</li></ul></div>
-            <div class="card"><div class="card__title">How It Works</div><ul class="card__list"><li>Lives on BJBJustice.com as its own section</li><li>Providers and firms submit disputes digitally</li><li>Automated workflow routing</li><li>Centralized tracking and resolution</li><li>National scale without proportional staffing</li></ul></div>
+            <div class="card card--gold">
+              <div class="card__title">Legal Partner Network</div>
+              <ul class="card__list">
+                <li>Referring portal — submit and receive case referrals</li>
+                <li>Lawyer login to see all referred cases</li>
+                <li>Auto accept/reject based on criteria</li>
+                <li>Full dashboards and tracking</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">Medical Partner Network</div>
+              <ul class="card__list">
+                <li>Provider referring portal</li>
+                <li>Submit cases AND receive cases</li>
+                <li>Dedicated provider section (looks standalone)</li>
+                <li>Full dashboards and tracking</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-2 mt-lg">
+            <div class="card card--gold">
+              <div class="card__title">Dispute Resolution Portal</div>
+              <ul class="card__list">
+                <li>PIP Arbs, NSA, SBL, other arbitration models</li>
+                <li>Service system: see case progression in real-time</li>
+                <li>Take next steps on active arbitrations</li>
+                <li>Send questions, reminders to keep process moving</li>
+                <li>Accurately built to exactly what they need</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">Arbitrator / IDR Portal</div>
+              <ul class="card__list">
+                <li>Dashboards for all cases they are serving</li>
+                <li>Cases sorted by PIP Arbs or NSA</li>
+                <li>Marketplace: send proposals on starting arbitrations</li>
+                <li>Full case service system with next-step actions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout mt-lg text-center">
+            <p style="font-size:var(--text-base);font-weight:600;color:var(--color-text)">+ Insurance Company Portal</p>
+            <p class="card__text mt-sm">Integrated access for carriers into the dispute resolution ecosystem.</p>
           </div>
           <button class="next-btn" data-shows="13" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
@@ -505,18 +601,19 @@
 
     <div class="section-divider" data-order="13"><div class="section-divider__line"></div></div>
 
-    <!-- ═══ OPP 1C: MARKETING ENGINE ═══ -->
-    <section id="opp-1c" data-order="13" class="section section--full-vh flex-center">
+    <!-- ═══ OPP 2: ALTERNATIVE ASSETS ═══ -->
+    <section id="opp-2" data-order="13" class="section section--full-vh flex-center">
       <div class="section__inner">
-        <div class="section-label">Opportunity 1 — BJBJustice.com</div>
-        <h2 class="headline headline--lg">The <em>Marketing Engine.</em></h2>
+        <div class="section-label">Opportunity 2</div>
+        <h2 class="headline headline--lg"><em>Alternative Asset</em> Strategies.</h2>
         <button class="reveal-trigger">Tap to reveal</button>
         <div class="reveal-content">
           <div class="grid-3 mt-xl">
-            <div class="card card--gold"><div class="card__title">New Website</div><p class="card__text">Firm-owned national platform. SEO-driven content, geo-targeted pages, intake funnels. Domain authority compounds over time.</p></div>
-            <div class="card card--gold"><div class="card__title">Video-First</div><p class="card__text">Brandon as national thought leader. Client education, trust building, conversion improvement across all practice areas.</p></div>
-            <div class="card card--gold"><div class="card__title">Provider Section</div><p class="card__text">Medical provider area looks like its own standalone product. Dedicated portal, separate branding, integrated with main platform.</p></div>
+            <div class="card card--gold"><div class="card__title">Pre-Foreclosure</div><p class="card__text">Identify distressed homeowners early. Contingency-based — no upfront cost to client.</p></div>
+            <div class="card card--gold"><div class="card__title">Surplus Recovery</div><p class="card__text">Post-foreclosure surplus funds. New revenue stream for the firm.</p></div>
+            <div class="card card--gold"><div class="card__title">Structured Settlements</div><p class="card__text">Convert recovered funds into long-term financial assets. Recurring value.</p></div>
           </div>
+          <p class="subtext mt-lg" style="text-align:center;max-width:100%">Each engagement generates referrals across <strong>PI, bankruptcy, real estate, financial disputes.</strong> <span class="gold">Compounding revenue potential.</span></p>
           <button class="next-btn" data-shows="14" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
@@ -524,110 +621,10 @@
 
     <div class="section-divider" data-order="14"><div class="section-divider__line"></div></div>
 
-    <!-- ═══ OPP 2: ALTERNATIVE ASSETS ═══ -->
-    <section id="opp-2" data-order="14" class="section section--full-vh flex-center">
-      <div class="section__inner">
-        <div class="section-label">Opportunity 2</div>
-        <h2 class="headline headline--lg"><em>Alternative Asset</em> Strategies.</h2>
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-          <div class="grid-3 mt-xl">
-            <div class="card card--gold"><div class="card__title">Pre-Foreclosure</div><p class="card__text">Identify distressed homeowners early. Commission-based outreach. Contingency-based — no upfront cost to client.</p></div>
-            <div class="card card--gold"><div class="card__title">Surplus Recovery</div><p class="card__text">Post-foreclosure surplus funds. New revenue stream for the firm.</p></div>
-            <div class="card card--gold"><div class="card__title">Structured Settlements</div><p class="card__text">Convert recovered funds into long-term financial assets. Recurring value.</p></div>
-          </div>
-          <p class="subtext mt-lg" style="text-align:center;max-width:100%">Each engagement generates referrals across <strong>PI, bankruptcy, real estate, financial disputes.</strong> <span class="gold">Compounding revenue potential.</span></p>
-          <button class="next-btn" data-shows="15" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
 
-    <div class="section-divider" data-order="15"><div class="section-divider__line"></div></div>
-
-    <!-- ═══ ORG CHART: CURRENT ═══ -->
-    <section id="current-org" data-order="15" class="section section--full-vh flex-center">
-      <div class="section__inner">
-        <div class="section-label">The Structure</div>
-        <h2 class="headline headline--lg">This is the <em>current</em> organization.</h2>
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-          <div class="org-chart" style="margin-top:var(--space-xl)">
-            <div class="org-card" style="background:rgba(30,60,100,.4);border-color:rgba(100,140,200,.4)"><div class="org-card__name">Brandon J. Broderick</div><div class="org-card__title">Chief Executive Officer</div></div>
-            <div class="org-connector"></div>
-            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
-              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">Ryan Broderick</div><div class="org-card__title">COO</div></div>
-              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">John Moran</div><div class="org-card__title">CPO</div></div>
-            </div>
-            <div class="org-connector"></div>
-            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
-              <div class="org-card" style="font-size:var(--text-sm)"><div class="org-card__name" style="font-size:var(--text-base)">Frank Scott</div><div class="org-card__title">CFO</div></div>
-              <div class="org-card org-card--primary"><div class="org-card__name">Justin Billingsley</div><div class="org-card__title">Executive Vice President</div></div>
-              <div class="org-card" style="font-size:var(--text-sm)"><div class="org-card__name" style="font-size:var(--text-base)">Lisa Will</div><div class="org-card__title">VP of HR</div></div>
-            </div>
-            <div class="org-connector"></div>
-            <div class="org-card"><div class="org-card__name">Matthew Broderick</div><div class="org-card__title">Vice President</div></div>
-          </div>
-          <button class="next-btn" data-shows="16" aria-label="Next"><span>See what it becomes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" data-order="16"><div class="section-divider__line"></div></div>
-
-    <!-- ═══ ORG CHART: NEW ═══ -->
-    <section id="new-org" data-order="16" class="section section--full-vh flex-center">
-      <div class="section__inner">
-        <div class="section-label">The Transformation</div>
-        <h2 class="headline headline--lg">This is what it <em>becomes.</em></h2>
-        <button class="reveal-trigger">Tap to reveal the new structure</button>
-        <div class="reveal-content">
-          <div class="org-chart" style="margin-top:var(--space-xl)">
-            <div class="org-card" style="background:rgba(30,60,100,.4);border-color:rgba(100,140,200,.4)"><div class="org-card__name">Brandon J. Broderick</div><div class="org-card__title">CEO</div></div>
-            <div class="org-connector"></div>
-            <div style="display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap">
-              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">Ryan Broderick</div><div class="org-card__title">COO</div></div>
-              <div class="org-card" style="background:rgba(40,70,120,.3);border-color:rgba(100,140,200,.3)"><div class="org-card__name">John Moran</div><div class="org-card__title">CPO</div></div>
-            </div>
-            <div class="org-connector"></div>
-            <div class="org-card org-card--primary" style="box-shadow:0 0 30px rgba(201,168,76,.15)"><div class="org-card__name">Justin Billingsley</div><div class="org-card__title">EVP — Operational Authority</div></div>
-          </div>
-          <div class="section-label mt-xl" style="margin-bottom:var(--space-sm)">Department Structure</div>
-          <div class="grid-3" style="gap:var(--space-sm)">
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Marques Burgess</div><div class="card__text" style="font-size:var(--text-xs)">Dir. Customer Development</div></div>
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Dan Jalil</div><div class="card__text" style="font-size:var(--text-xs)">CTO</div></div>
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Brittany Hale</div><div class="card__text" style="font-size:var(--text-xs)">Sr. Manager Pre-LIT</div></div>
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Adam Greenspan</div><div class="card__text" style="font-size:var(--text-xs)">VP Claims (>$100k)</div></div>
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">Kennia Delgado</div><div class="card__text" style="font-size:var(--text-xs)">Paralegal Manager</div></div>
-            <div class="card" style="padding:var(--space-md);border-color:rgba(201,168,76,.3)"><div class="card__title" style="font-size:var(--text-base);margin-bottom:2px">BJB Dispute Hub</div><div class="card__text" style="font-size:var(--text-xs)">PIP Arbs / NSA</div></div>
-          </div>
-          <button class="next-btn" data-shows="17" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" data-order="17"><div class="section-divider__line"></div></div>
-
-    <!-- ═══ JUSTIN'S ROLE ═══ -->
-    <section id="justin" data-order="17" class="section section--full-vh flex-center">
-      <div class="section__inner">
-        <div class="section-label">The Leader</div>
-        <h2 class="headline headline--lg">What Justin Billingsley <em>brings</em> to this role.</h2>
-        <button class="reveal-trigger">Tap to reveal</button>
-        <div class="reveal-content">
-          <div class="grid-2 mt-xl">
-            <div class="card card--gold"><div class="card__title">Experience</div><ul class="card__list"><li>Decades of operational infrastructure</li><li>Built scalable systems and performance engineering</li><li>SEO, digital marketing, lead generation</li><li>National marketing expansion</li></ul></div>
-            <div class="card card--gold"><div class="card__title">Proven Execution</div><ul class="card__list"><li><strong class="gold">889 BOCs</strong> cleared to zero in one month</li><li>40% of intake calls to offshore — resolved</li><li>Built the Optimus Operating System</li><li>MOS framework, workflow engineering</li></ul></div>
-          </div>
-          <div class="callout mt-xl text-center"><p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text)">Dogged. Relentless. Pitbull-like execution.</p><p class="subtext mt-sm" style="margin:var(--space-sm) auto 0">Laser focused on outcomes, accountability, and measurable results.</p></div>
-          <button class="next-btn" data-shows="18" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" data-order="18"><div class="section-divider__line"></div></div>
 
     <!-- ═══ CONCLUSION ═══ -->
-    <section id="conclusion" data-order="18" class="section section--conclusion section--full-vh flex-center" style="position:relative">
+    <section id="conclusion" data-order="14" class="section section--conclusion section--full-vh flex-center" style="position:relative">
       <div class="particles"><div class="particle" style="left:8%;top:25%;animation-delay:.5s"></div><div class="particle" style="left:45%;top:30%;animation-delay:1s"></div><div class="particle" style="left:78%;top:20%;animation-delay:.2s"></div><div class="particle" style="left:30%;top:85%;animation-delay:1.5s"></div><div class="particle" style="left:88%;top:40%;animation-delay:2.5s"></div></div>
       <div class="section__inner section__inner--narrow text-center" style="position:relative;z-index:1">
         <div class="section-label">The Commitment</div>
