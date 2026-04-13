@@ -2,7 +2,7 @@
    Entrance
    ================================ */
 .section--entrance {
-  background: var(--color-bg);
+  background: transparent;
   z-index: var(--z-base);
 }
 
