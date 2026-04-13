@@ -77,7 +77,49 @@
       <div class="act-label act-label--danger">A Critical Inflection Point</div>
       <div class="act-title" style="max-width:800px;">The firm is operating on a<br><span style="color:var(--color-danger)">FUNCTION-BASED structure.</span></div>
       <div class="act-subtitle" style="max-width:700px;text-align:center;">Everyone owns their piece of the work — but no one is accountable for the end result.</div>
-      <p style="font-size:var(--text-2xl);font-weight:800;color:var(--color-danger);margin-top:var(--space-xl);text-align:center;">SILOS = Zero Accountability</p>
+
+      <!-- Function-based silo graphic -->
+      <svg viewBox="0 0 820 320" style="width:100%;max-width:750px;margin-top:var(--space-xl);" xmlns="http://www.w3.org/2000/svg">
+        <!-- Silo columns -->
+        <rect x="30" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
+        <rect x="190" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
+        <rect x="350" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
+        <rect x="510" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
+        <rect x="670" y="40" width="130" height="180" rx="8" fill="#141414" stroke="#333" stroke-width="1.5"/>
+
+        <!-- Barrier walls between silos -->
+        <rect x="167" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
+        <rect x="327" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
+        <rect x="487" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
+        <rect x="647" y="30" width="3" height="200" fill="#c0392b" opacity="0.4" rx="1"/>
+
+        <!-- Department labels -->
+        <text x="95" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">INTAKE</text>
+        <text x="255" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">CASE</text>
+        <text x="255" y="132" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">MGMT</text>
+        <text x="415" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">MEDICAL</text>
+        <text x="415" y="132" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">RECORDS</text>
+        <text x="575" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">PRE-LIT</text>
+        <text x="575" y="132" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">MGMT</text>
+        <text x="735" y="115" text-anchor="middle" fill="#888" font-family="Inter,sans-serif" font-size="13" font-weight="600">SETTLEMENT</text>
+
+        <!-- Small icons in each column (faded gold) -->
+        <circle cx="95" cy="165" r="14" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <text x="95" y="170" text-anchor="middle" fill="#c9a84c" font-size="14" opacity="0.3">&#x260E;</text>
+        <rect x="243" y="152" width="24" height="28" rx="3" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <circle cx="415" cy="165" r="14" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <text x="415" y="170" text-anchor="middle" fill="#c9a84c" font-size="16" opacity="0.3">+</text>
+        <circle cx="575" cy="165" r="14" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <text x="575" y="170" text-anchor="middle" fill="#c9a84c" font-size="14" opacity="0.3">&#x23F1;</text>
+        <circle cx="735" cy="165" r="14" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <text x="735" y="170" text-anchor="middle" fill="#c9a84c" font-size="16" opacity="0.3">$</text>
+
+        <!-- Broken dashed client journey line -->
+        <line x1="30" y1="260" x2="800" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="8 14" opacity="0.5"/>
+        <text x="410" y="290" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="12" font-weight="500" letter-spacing="0.15em">CLIENT JOURNEY — FRAGMENTED</text>
+      </svg>
+
+      <p style="font-size:var(--text-2xl);font-weight:800;color:var(--color-danger);margin-top:var(--space-lg);text-align:center;">SILOS = Zero Accountability</p>
       <button class="next-btn" data-shows="2" aria-label="Next" style="display:inline-flex;margin-top:var(--space-xl);"><span>See the problems</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
     </div>
 
