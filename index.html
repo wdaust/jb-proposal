@@ -37,7 +37,7 @@
   <div class="progress-bar"><div class="progress-bar__fill" id="progress-bar-fill"></div></div>
 
   <!-- Beard watermark background -->
-  <div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);height:50vh;opacity:0.03;pointer-events:none;z-index:0;">
+  <div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);height:62.5vh;opacity:0.03;pointer-events:none;z-index:0;">
     <img src="assets/svg/beard.svg" alt="" style="height:100%;width:auto;">
   </div>
 
@@ -143,6 +143,7 @@
             <div class="card text-center"><div class="stat-number" data-counter="3800">0</div><div class="stat-label">active pre-lit cases</div></div>
             <div class="card card--danger text-center"><div class="stat-number" style="color:var(--color-danger)" data-counter="2074">0</div><div class="stat-label">cases <strong>past 6 months</strong></div></div>
           </div>
+          <p class="subtext mt-sm" style="font-size:var(--text-xs);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.7;">For detailed cost model, see full analysis &rarr;</a></p>
           <p class="subtext mt-lg">~2,000 cases at risk of losing <strong>50-80% of their value.</strong> Here's what that costs:</p>
 
           <!-- Cost Overrun Table — row by row reveal -->
@@ -227,8 +228,8 @@
                 <td colspan="3" style="text-align:center">$17.54</td>
               </tr>
               <tr class="cost-row-hidden cost-table__mega" data-rgroup="6">
-                <td>Cost of Delay per Day — ALL Inventory</td>
-                <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$66,662</td>
+                <td>Cost of Delay per Day — Cases Past 6 Months</td>
+                <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$36,378</td>
               </tr>
             </tbody>
           </table>
@@ -340,10 +341,10 @@
           <div class="problem-tracker__item problem-tracker__item--active">5</div>
         </div>
         <div class="section-label section-label--danger">Problem 5</div>
-        <h2 class="headline headline--lg"><em>900 demands</em> with zero follow-up.</h2>
+        <h2 class="headline headline--lg"><em>799 demands</em> with zero follow-up.</h2>
         <button class="reveal-trigger">Tap to reveal the evidence</button>
         <div class="reveal-content">
-          <div class="text-center glow-wrap mt-xl" style="position:relative;padding:var(--space-xl)"><div class="glow glow--danger glow--lg"></div><div class="radar radar--danger"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" data-counter="900">0</div><div class="stat-label" style="font-size:var(--text-base)">demands pending</div><div style="color:var(--color-danger);font-weight:700;font-size:var(--text-lg);margin-top:var(--space-xs)">Only follow-up has been email</div></div></div>
+          <div class="text-center glow-wrap mt-xl" style="position:relative;padding:var(--space-xl)"><div class="glow glow--danger glow--lg"></div><div class="radar radar--danger"><div class="radar__ring"></div><div class="radar__ring"></div><div class="radar__ring"></div></div><div style="position:relative;z-index:1"><div class="stat-number stat-number--huge" data-counter="799">0</div><div class="stat-label" style="font-size:var(--text-base)">demands pending <span style="font-size:var(--text-xs);color:var(--color-text-dim);font-weight:400;">(as of 4.13)</span></div><div style="color:var(--color-danger);font-weight:700;font-size:var(--text-lg);margin-top:var(--space-xs)">Only follow-up has been email</div></div></div>
           <p class="subtext mt-lg" style="text-align:center;max-width:100%">Cases are sitting months longer than needed. Unnecessarily flowing into litigation. The current team claims email is sufficient — <strong>the data says otherwise.</strong></p>
           <button class="next-btn" data-shows="7" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
@@ -361,27 +362,64 @@
     <div class="section-divider" data-order="8"><div class="section-divider__line"></div></div>
 
     <!-- ═══ SOLUTION 1: ELITE CM TASK FORCE ═══ -->
-    <section id="s1" data-order="8" class="section section--full-vh flex-center">
+    <section id="s1" data-order="8" class="section section--full-vh" style="align-items:flex-start;padding-top:var(--space-2xl);">
       <div class="section__inner">
         <div class="solution-label">Solution 1</div>
-        <h2 class="headline headline--lg">Recruit, hire, train, and deploy an <em>Elite Case Manager Task Force.</em></h2>
+        <h2 class="headline headline--lg">The <em>Elite Case Manager Task Force.</em></h2>
+        <p class="subtext mt-sm">The core operational engine of BJB's pre-lit rebuild, settlement growth, and national expansion strategy.</p>
         <button class="reveal-trigger">Tap to reveal the plan</button>
         <div class="reveal-content">
+          <!-- 4 Value Points -->
           <div class="grid-2 mt-xl">
-            <div class="card card--gold"><div class="card__title">The Build</div><ul class="card__list"><li>55 Case Engineers needed (3,800 ÷ 70 files)</li><li>Retain 20 current CMs, hire <strong class="gold">35 additional</strong></li><li>Two groups: MMLs (rebuilt) + CMs (elite tier)</li><li>This department must be <strong>built</strong>, not renamed</li></ul></div>
-            <div class="card card--gold"><div class="card__title">Compensation</div><ul class="card__list"><li><strong class="gold">$65K salary</strong> + $65K performance bonus</li><li>Comp tied to throughput and case value</li><li>Performance-based culture from day one</li><li>Attract high-caliber talent</li></ul></div>
+            <div class="card card--gold">
+              <div class="card__title">1. The Operational Bridge</div>
+              <p class="card__text">The missing middle between case acquisition and settlement conversion. Without this bridge, volume accumulates faster than value.</p>
+              <ul class="card__list">
+                <li>Case Development qualifies and activates</li>
+                <li><strong class="gold">Elite CM Task Force</strong> builds and advances</li>
+                <li>Settlement resolves the engineered file</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">2. Stop Case Decay</div>
+              <p class="card__text">Aged cases don't just cost more — they become <strong>worth less.</strong> Treatment gaps, client disengagement, weakened causation, fragmented records.</p>
+              <ul class="card__list">
+                <li>Every case assigned a progression owner</li>
+                <li>Treatment gaps surfaced in days, not months</li>
+                <li>A slow case is often a <strong>smaller</strong> case</li>
+              </ul>
+            </div>
           </div>
           <div class="grid-2 mt-lg">
-            <div class="card"><div class="card__title">How to Find Them</div><ul class="card__list"><li>Targeted recruiting from competing PI firms</li><li>Legal staffing agencies specializing in PI</li><li>Clear job description emphasizing production role</li><li>Filter for treatment coordination experience</li></ul></div>
-            <div class="card"><div class="card__title">How to Interview</div><ul class="card__list"><li>Scenario-based assessment: case progression</li><li>Evaluate treatment coordination instincts</li><li>Test escalation judgment</li><li>Verify production mindset vs admin mindset</li></ul></div>
+            <div class="card card--gold">
+              <div class="card__title">3. National Expansion Engine</div>
+              <p class="card__text">Centralized from Hackensack. Standardized workflows, offshore admin, remote treatment oversight. Enter new states without duplicating infrastructure.</p>
+              <ul class="card__list">
+                <li>Centralized operational control</li>
+                <li>Offshore handles repeatable admin work</li>
+                <li>Makes national expansion economically possible</li>
+              </ul>
+            </div>
+            <div class="card card--gold">
+              <div class="card__title">4. The Economics</div>
+              <p class="card__text">Not paying for more staff. Buying throughput, value per case, speed to settlement, and national scalability.</p>
+              <ul class="card__list">
+                <li>37 more cases/week to RFD × $15K = <strong class="gold">$555K/week</strong></li>
+                <li>$555K × 52 = <strong class="gold">$28.86M/year</strong></li>
+                <li>55 Elite CMs needed (retain 20, hire 35)</li>
+                <li>Comp: $65K salary + $65K performance bonus</li>
+              </ul>
+            </div>
           </div>
+          <!-- Pipeline flow -->
           <div class="flow mt-xl" style="gap:var(--space-xs)">
             <div class="flow__step flow__step--active" style="padding:var(--space-md) var(--space-lg)"><strong>Case Development</strong><br><span style="font-size:var(--text-xs);color:var(--color-text-dim)">qualifies &bull; opens &bull; activates</span></div>
             <div class="flow__arrow" style="font-size:var(--text-xl)">&rarr;</div>
-            <div class="flow__step flow__step--active" style="padding:var(--space-md) var(--space-lg);border-color:var(--color-gold);background:rgba(201,168,76,.08)"><strong class="gold">Case Engineering</strong><br><span style="font-size:var(--text-xs);color:var(--color-text-dim)">builds &bull; advances &bull; monitors</span></div>
+            <div class="flow__step flow__step--active" style="padding:var(--space-md) var(--space-lg);border-color:var(--color-gold);background:rgba(201,168,76,.08)"><strong class="gold">Elite CM Task Force</strong><br><span style="font-size:var(--text-xs);color:var(--color-text-dim)">builds &bull; advances &bull; monitors</span></div>
             <div class="flow__arrow" style="font-size:var(--text-xl)">&rarr;</div>
-            <div class="flow__step flow__step--active" style="padding:var(--space-md) var(--space-lg)"><strong>Settlement</strong><br><span style="font-size:var(--text-xs);color:var(--color-text-dim)">resolves the case</span></div>
+            <div class="flow__step flow__step--active" style="padding:var(--space-md) var(--space-lg)"><strong>Settlement</strong><br><span style="font-size:var(--text-xs);color:var(--color-text-dim)">receives engineered file</span></div>
           </div>
+          <p class="subtext mt-lg" style="text-align:center;max-width:100%;font-size:var(--text-xs);"><a href="https://brandonjbroderick-my.sharepoint.com/:x:/r/personal/jbillingsley_brandonjbroderick_com/_layouts/15/Doc.aspx?sourcedoc=%7BEF462F5B-B658-4979-AE09-F4D7A02462AD%7D&file=Operational%20Deficiency%20Cost%20Model.xlsx&action=default&mobileredirect=true" target="_blank" style="color:var(--color-gold);text-decoration:underline;opacity:0.7;">Full Elite Case Manager Task Force document &rarr;</a></p>
           <button class="next-btn" data-shows="9" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
@@ -399,7 +437,7 @@
         <div class="reveal-content">
           <div class="grid-2 mt-xl">
             <div class="card card--gold"><div class="card__title">The Team</div><ul class="card__list"><li>2-3 dedicated negotiators + 1 team lead</li><li>All sub-$50K settlement opportunities</li><li>First follow-up within 7 days</li><li>Follow-up every 7 days, escalation at 30</li><li>Operates independently from current resolution</li></ul></div>
-            <div class="card card--gold"><div class="card__title">The Impact</div><ul class="card__list"><li>Settlements: <strong class="gold">$4M → $6M/month</strong></li><li>Reduced litigation volume</li><li>Accelerated revenue speed</li><li>900 pending demands actively pursued</li><li>Active negotiation replaces passive waiting</li></ul></div>
+            <div class="card card--gold"><div class="card__title">The Impact</div><ul class="card__list"><li>Settlements: <strong class="gold">$4M → $6M/month</strong></li><li>Reduced litigation volume</li><li>Accelerated revenue speed</li><li>799 pending demands actively pursued</li><li>Active negotiation replaces passive waiting</li></ul></div>
           </div>
           <div class="flow mt-xl" style="gap:var(--space-xs)">
             <div class="flow__step flow__step--active">Demand Sent</div><div class="flow__arrow">&rarr;</div>
