@@ -5,8 +5,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  /* scroll-behavior handled by GSAP — no CSS smooth scroll to avoid fighting */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
