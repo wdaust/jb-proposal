@@ -310,6 +310,34 @@
     });
   }
 
+  // ── Row-by-Row Table Reveal ────────────────────────────────────
+  function initRowReveal() {
+    document.querySelectorAll('.reveal-row-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var table = btn.closest('.section__inner').querySelector('.cost-table');
+        if (!table) return;
+        var hidden = table.querySelector('.cost-row-hidden');
+        if (hidden) {
+          hidden.classList.remove('cost-row-hidden');
+          hidden.classList.add('cost-row-visible');
+          // Trigger counters in the revealed row
+          hidden.querySelectorAll('[data-counter]').forEach(function(el) {
+            if (!el.dataset.animated) {
+              animateCounter(el);
+              el.dataset.animated = 'true';
+            }
+          });
+        }
+        // If no more hidden rows, hide the button and show the Next btn
+        if (!table.querySelector('.cost-row-hidden')) {
+          btn.style.display = 'none';
+          var nextBtn = btn.closest('.reveal-content').querySelector('.next-btn');
+          if (nextBtn) nextBtn.classList.add('is-visible');
+        }
+      });
+    });
+  }
+
   // ── Smooth Scroll — uses GSAP if available for buttery smoothness ──
   function smoothScrollTo(section, dur) {
     var target = section.querySelector('.section-label, .solution-label');
@@ -520,6 +548,7 @@
     initReveals();
     initSectionLock();
     initCounters();
+    initRowReveal();
     initRingCharts();
     initClickReveals();
     initScrollEngine();

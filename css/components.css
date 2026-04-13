@@ -561,6 +561,103 @@
 }
 .next-initiative-btn svg { width: 20px; height: 20px; }
 
+/* ═══ COST TABLE ═══ */
+.cost-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: var(--space-xl);
+}
+.cost-table th {
+  padding: 0.6rem 1rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  text-align: right;
+  border-bottom: 1px solid #222;
+  background: #0d0d0d;
+}
+.cost-table th:first-child {
+  text-align: left;
+  color: var(--color-text-muted);
+}
+.cost-table td {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: right;
+  border-bottom: 1px solid #1a1a1a;
+}
+.cost-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+.cost-table tr.cost-table__highlight td {
+  color: var(--color-text);
+  font-weight: 700;
+  background: rgba(201,168,76,0.04);
+  border-left: 2px solid var(--color-gold);
+}
+.cost-table tr.cost-table__highlight td:first-child {
+  color: var(--color-gold);
+}
+.cost-table tr.cost-table__danger td {
+  color: var(--color-danger);
+  font-weight: 700;
+  background: rgba(231,76,60,0.04);
+  border-left: 2px solid var(--color-danger);
+}
+.cost-table tr.cost-table__danger td:first-child {
+  color: var(--color-danger);
+}
+.cost-table tr.cost-table__mega td {
+  color: var(--color-danger);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  background: rgba(231,76,60,0.06);
+  border-left: 3px solid var(--color-danger);
+  padding: 0.8rem 1rem;
+}
+.cost-table tr.cost-table__spacer td {
+  padding: 0.25rem;
+  border-bottom: none;
+}
+/* Hidden rows for reveal */
+.cost-table tr.cost-row-hidden {
+  display: none;
+}
+.cost-table tr.cost-row-visible {
+  display: table-row;
+  animation: reveal-child 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.reveal-row-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 100px;
+  background: rgba(201,168,76,0.06);
+  color: var(--color-gold);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--space-lg);
+  transition: all 0.3s;
+  animation: reveal-pulse 2.5s ease-in-out infinite;
+}
+.reveal-row-btn:hover {
+  background: rgba(201,168,76,0.12);
+  box-shadow: 0 0 20px rgba(201,168,76,0.2);
+}
+
 /* ═══ PROBLEM TRACKER ═══ */
 .problem-tracker {
   display: flex;

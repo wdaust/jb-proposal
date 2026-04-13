@@ -126,7 +126,7 @@
     <div class="section-divider" data-order="2"><div class="section-divider__line"></div></div>
 
     <!-- ═══ PROBLEM 1 ═══ -->
-    <section id="p1" data-order="2" class="section section--full-vh flex-center">
+    <section id="p1" data-order="2" class="section section--full-vh" style="align-items:flex-start;padding-top:var(--space-2xl);">
       <div class="section__inner">
         <div class="problem-tracker">
           <div class="problem-tracker__item problem-tracker__item--active">1</div>
@@ -136,15 +136,111 @@
           <div class="problem-tracker__item problem-tracker__item--upcoming">5</div>
         </div>
         <div class="section-label section-label--danger">Problem 1</div>
-        <h2 class="headline headline--lg">Case inventory is <em>destroying value.</em></h2>
+        <h2 class="headline headline--lg">Case inventory is <em>losing value.</em></h2>
         <button class="reveal-trigger">Tap to reveal the evidence</button>
         <div class="reveal-content">
-          <div class="grid-3 mt-xl">
+          <div class="grid-2 mt-xl" style="max-width:500px;">
             <div class="card text-center"><div class="stat-number" data-counter="3800">0</div><div class="stat-label">active pre-lit cases</div></div>
             <div class="card card--danger text-center"><div class="stat-number" style="color:var(--color-danger)" data-counter="2074">0</div><div class="stat-label">cases <strong>past 6 months</strong></div></div>
-            <div class="card card--danger text-center glow-wrap" style="position:relative"><div class="glow glow--danger"></div><div style="position:relative;z-index:1"><div class="stat-number" style="color:var(--color-danger)" data-counter="36000" data-prefix="$" data-suffix="/day">$0</div><div class="stat-label"><strong>cash destruction</strong></div></div></div>
           </div>
-          <p class="subtext mt-lg" style="text-align:center;max-width:100%">~2,000 cases at risk of losing <strong>50-80% of their value.</strong> This is not a performance problem. This is a structural throughput problem.</p>
+          <p class="subtext mt-lg">~2,000 cases at risk of losing <strong>50-80% of their value.</strong> Here's what that costs:</p>
+
+          <!-- Cost Overrun Table — row by row reveal -->
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Cost Overrun Model</th>
+                <th>A (20%)</th>
+                <th>B (45%)</th>
+                <th>C (75%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cost-row-hidden">
+                <td>Delay (includes case decay)</td>
+                <td style="color:var(--color-gold)">20%</td>
+                <td style="color:var(--color-gold)">45%</td>
+                <td style="color:var(--color-danger)">75%</td>
+              </tr>
+              <tr class="cost-row-hidden">
+                <td>Additional Days Past 6mo</td>
+                <td>36</td>
+                <td>81</td>
+                <td>135</td>
+              </tr>
+              <tr class="cost-row-hidden">
+                <td>Case Manager Cost</td>
+                <td>$492</td>
+                <td>$1,108</td>
+                <td>$1,846</td>
+              </tr>
+              <tr class="cost-row-hidden">
+                <td>Case Admin Cost</td>
+                <td>$39</td>
+                <td>$88</td>
+                <td>$147</td>
+              </tr>
+              <tr class="cost-row-hidden">
+                <td>Other Direct Cost</td>
+                <td>$100</td>
+                <td>$225</td>
+                <td>$375</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__highlight">
+                <td>Cost of Delay per Case</td>
+                <td>$632</td>
+                <td>$1,421</td>
+                <td>$2,368</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
+              <tr class="cost-row-hidden">
+                <td>Fee Drop-Off Rate</td>
+                <td>—</td>
+                <td>10%</td>
+                <td style="color:var(--color-danger)">30%</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__danger">
+                <td>Loss of Sale</td>
+                <td>$0</td>
+                <td>$1,793</td>
+                <td>$5,378</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
+              <tr class="cost-row-hidden cost-table__highlight">
+                <td>Opportunity Cost per Case</td>
+                <td>$632</td>
+                <td>$3,213</td>
+                <td>$7,746</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
+              <tr class="cost-row-hidden">
+                <td>Cost of Delay — Full Portfolio</td>
+                <td>$2,399,824</td>
+                <td>$5,399,603</td>
+                <td>$8,999,339</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__danger">
+                <td>Opportunity Cost — Full Portfolio</td>
+                <td>$2,399,824</td>
+                <td>$12,211,255</td>
+                <td style="font-size:var(--text-base)">$29,434,295</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__spacer"><td colspan="4"></td></tr>
+              <tr class="cost-row-hidden cost-table__mega">
+                <td>Cost of Delay per Case per Day</td>
+                <td colspan="3" style="text-align:center">$17.54</td>
+              </tr>
+              <tr class="cost-row-hidden cost-table__mega">
+                <td>Cost of Delay per Day — ALL Inventory</td>
+                <td colspan="3" style="text-align:center;font-size:var(--text-xl)">$66,662</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="text-align:center">
+            <button class="reveal-row-btn">Reveal next row ↓</button>
+          </div>
+
           <button class="next-btn" data-shows="3" aria-label="Next"><span>Next</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
         </div>
       </div>
