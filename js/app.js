@@ -467,8 +467,9 @@
         // Hide the trigger button
         btn.classList.add('is-hidden');
 
-        // Show next button immediately (it animates in with the stagger)
-        if (nextBtn) {
+        // Show next button immediately — UNLESS section has row-reveal table (then table controls it)
+        var hasRowReveal = section.querySelector('.reveal-row-btn');
+        if (nextBtn && !hasRowReveal) {
           nextBtn.classList.add('is-visible');
         }
 
