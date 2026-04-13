@@ -36,19 +36,24 @@
 
   <div class="progress-bar"><div class="progress-bar__fill" id="progress-bar-fill"></div></div>
 
+  <!-- Beard watermark background -->
+  <div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);height:50vh;opacity:0.03;pointer-events:none;z-index:0;">
+    <img src="assets/svg/beard.svg" alt="" style="height:100%;width:auto;">
+  </div>
+
   <main>
 
     <!-- ═══ ENTRANCE ═══ -->
     <section id="entrance" data-order="0" class="section section--entrance section--full-vh flex-center" style="position:relative;">
       <div class="text-center" style="display:flex;flex-direction:column;align-items:center;">
         <div class="entrance-logo" style="margin-bottom:var(--space-xl);">
-          <img src="assets/img/beard-white.png" alt="" style="width:120px;height:auto;opacity:0.9;">
+          <img src="assets/svg/beard.svg" alt="" style="width:130px;height:auto;opacity:0.9;">
         </div>
         <div class="entrance-rule" style="margin-bottom:var(--space-lg);"></div>
         <div class="entrance-subtitle" style="font-size:var(--text-xs);letter-spacing:0.35em;color:var(--color-text-dim);font-weight:600;text-transform:uppercase;">A Proposal by</div>
-        <div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--color-text);letter-spacing:-0.02em;margin-top:var(--space-sm);line-height:1.1;">Justin Billingsley</div>
+        <div style="font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:600;color:var(--color-text-muted);letter-spacing:0.02em;margin-top:var(--space-sm);">Justin Billingsley</div>
         <div style="font-size:var(--text-xs);letter-spacing:0.35em;color:var(--color-text-dim);font-weight:600;text-transform:uppercase;margin-top:var(--space-md);">Presented to</div>
-        <div style="font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;color:var(--color-gold);letter-spacing:0.02em;margin-top:var(--space-sm);">Brandon J. Broderick</div>
+        <div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--color-gold);letter-spacing:-0.02em;margin-top:var(--space-sm);line-height:1.1;">Brandon J. Broderick</div>
         <div style="font-size:var(--text-xs);letter-spacing:0.25em;color:var(--color-text-dim);font-weight:500;margin-top:var(--space-xs);">Personal Injury Attorney at Law</div>
       </div>
       <div class="entrance-scroll"><span class="entrance-scroll__text">Scroll for more</span><div class="entrance-scroll__chevron"></div></div>
@@ -59,8 +64,8 @@
       <div class="particles"><div class="particle" style="left:10%;top:20%;animation-delay:0s"></div><div class="particle" style="left:55%;top:75%;animation-delay:.5s"></div><div class="particle" style="left:80%;top:50%;animation-delay:1.8s"></div><div class="particle" style="left:35%;top:90%;animation-delay:5s"></div><div class="particle" style="left:90%;top:30%;animation-delay:2.1s"></div></div>
       <div class="section__inner section__inner--narrow text-center" style="position:relative;z-index:1">
         <h1 class="headline headline--hero" style="line-height:1.15;">A business is only as good as its ability to <em>solve problems.</em></h1>
-        <p class="subtext subtext--lg mt-lg" style="margin:var(--space-lg) auto 0">What follows are critical inflection points. 5-alarm issues. And their engineered solutions.</p>
-        <p class="mt-lg" style="font-size:var(--text-lg);color:var(--color-text-muted)">We will discuss <strong style="color:var(--color-danger)">Problems</strong> — and <strong class="gold">Opportunities.</strong></p>
+        <p class="subtext subtext--lg mt-lg" style="margin:var(--space-lg) auto 0">What follows are critical inflection points. These are <strong style="color:var(--color-danger)">5-alarm issues.</strong></p>
+        <p class="mt-lg" style="font-size:var(--text-lg);color:var(--color-text-muted)">This presentation reveals severe problems, offers two engineered solutions, and presents two major opportunities.</p>
       </div>
       <div style="position:absolute;bottom:var(--space-2xl);left:0;right:0;text-align:center;z-index:2;">
         <button class="next-btn" data-shows="1" aria-label="Next" style="display:inline-flex;"><span>Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
@@ -70,10 +75,9 @@
     <!-- ═══ ROOT CAUSE ═══ -->
     <div class="act-header" data-order="1" style="min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center">
       <div class="act-label act-label--danger">A Critical Inflection Point</div>
-      <div class="act-title" style="max-width:800px;">The firm is operating on a <span style="color:var(--color-danger)">function-based structure.</span></div>
-      <div class="act-subtitle" style="max-width:700px;text-align:center;">Built as it made sense. Hired someone, built work around that person, it became a department. Now there are mini-businesses inside the firm. Everyone owns their piece of the work — but it's not completed work.</div>
-      <p style="font-size:var(--text-base);color:var(--color-text-muted);margin-top:var(--space-lg);max-width:650px;text-align:center;margin-left:auto;margin-right:auto;">A company that builds engines, exteriors, and interiors — but no one knows how to put it all together. <strong style="color:var(--color-text)">Silos. No one owns the result. Zero accountability.</strong></p>
-      <p style="font-size:var(--text-lg);color:var(--color-text);margin-top:var(--space-lg);font-weight:600;text-align:center;">At 20 employees, this is fine. At this scale, it creates these problems...</p>
+      <div class="act-title" style="max-width:800px;">The firm is operating on a<br><span style="color:var(--color-danger)">FUNCTION-BASED structure.</span></div>
+      <div class="act-subtitle" style="max-width:700px;text-align:center;">Everyone owns their piece of the work — but no one is accountable for the end result.</div>
+      <p style="font-size:var(--text-2xl);font-weight:800;color:var(--color-danger);margin-top:var(--space-xl);text-align:center;">SILOS = Zero Accountability</p>
       <button class="next-btn" data-shows="2" aria-label="Next" style="display:inline-flex;margin-top:var(--space-xl);"><span>See the problems</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></button>
     </div>
 
