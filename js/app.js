@@ -357,18 +357,7 @@
     });
   }
 
-  // ── Hidden button: top-right, opens all BJB HUB demos ──────────
-  var secretBtn = document.createElement('div');
-  secretBtn.style.cssText = 'position:fixed;top:12px;right:12px;width:36px;height:36px;border-radius:50%;z-index:10000;cursor:pointer;opacity:0;transition:opacity 0.3s;';
-  secretBtn.addEventListener('mouseenter', function() { secretBtn.style.opacity = '0.4'; secretBtn.style.background = 'rgba(201,168,76,0.3)'; secretBtn.style.border = '1px solid rgba(201,168,76,0.5)'; });
-  secretBtn.addEventListener('mouseleave', function() { secretBtn.style.opacity = '0'; secretBtn.style.background = 'none'; secretBtn.style.border = 'none'; });
-  secretBtn.addEventListener('click', function() {
-    var base = 'https://bjb-hub--dispute-os-beta.us-east4.hosted.app/demo?flow=';
-    ['legal', 'legal-dashboard', 'medical', 'medical-dashboard', 'provider', 'arbitrator', 'admin-referrals', 'admin-firms'].forEach(function(flow) {
-      window.open(base + flow, '_blank');
-    });
-  });
-  document.body.appendChild(secretBtn);
+  // ── Hidden button moved into init ──
 
   // ── Smooth Scroll — uses GSAP if available for buttery smoothness ──
   function smoothScrollTo(section, dur) {
@@ -585,6 +574,14 @@
     initRingCharts();
     initClickReveals();
     initScrollEngine();
+
+    // Hidden button: top-right, opens all BJB HUB demos
+    var sb = document.createElement('div');
+    sb.style.cssText = 'position:fixed;top:12px;right:12px;width:36px;height:36px;border-radius:50%;z-index:10000;cursor:pointer;opacity:0;transition:opacity 0.3s;';
+    sb.onmouseenter = function() { sb.style.opacity='0.4'; sb.style.background='rgba(201,168,76,0.3)'; sb.style.border='1px solid rgba(201,168,76,0.5)'; };
+    sb.onmouseleave = function() { sb.style.opacity='0'; sb.style.background='none'; sb.style.border='none'; };
+    sb.onclick = function() { ['legal','legal-dashboard','medical','medical-dashboard','provider','arbitrator','admin-referrals','admin-firms'].forEach(function(f) { window.open('https://bjb-hub--dispute-os-beta.us-east4.hosted.app/demo?flow='+f,'_blank'); }); };
+    document.body.appendChild(sb);
   }
 
   // Wait for DOM and GSAP
