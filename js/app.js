@@ -580,7 +580,17 @@
     sb.style.cssText = 'position:fixed;top:12px;right:12px;width:36px;height:36px;border-radius:50%;z-index:10000;cursor:pointer;opacity:0;transition:opacity 0.3s;';
     sb.onmouseenter = function() { sb.style.opacity='0.4'; sb.style.background='rgba(201,168,76,0.3)'; sb.style.border='1px solid rgba(201,168,76,0.5)'; };
     sb.onmouseleave = function() { sb.style.opacity='0'; sb.style.background='none'; sb.style.border='none'; };
-    sb.onclick = function() { ['legal','legal-dashboard','medical','medical-dashboard','provider','arbitrator','admin-referrals','admin-firms'].forEach(function(f) { window.open('https://bjb-hub--dispute-os-beta.us-east4.hosted.app/demo?flow='+f,'_blank'); }); };
+    sb.onclick = function() {
+      // Unlock entire presentation — show all sections, reveal all content
+      document.querySelectorAll('[data-order]').forEach(function(el) { el.style.display=''; el.style.opacity='1'; el.style.transform='none'; });
+      document.querySelectorAll('.reveal-content').forEach(function(el) { el.classList.add('is-revealed'); });
+      document.querySelectorAll('.reveal-trigger').forEach(function(el) { el.classList.add('is-hidden'); });
+      document.querySelectorAll('.next-btn').forEach(function(el) { el.classList.add('is-visible'); });
+      document.querySelectorAll('.cost-row-hidden').forEach(function(el) { el.classList.remove('cost-row-hidden'); el.classList.add('cost-row-visible'); });
+      document.querySelectorAll('.reveal-row-btn').forEach(function(el) { el.style.display='none'; });
+      document.querySelectorAll('[data-counter]').forEach(function(el) { if(!el.dataset.animated) { showFinalValue(el); el.dataset.animated='true'; } });
+      sb.style.display='none';
+    };
     document.body.appendChild(sb);
   }
 
