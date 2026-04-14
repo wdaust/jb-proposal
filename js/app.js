@@ -357,6 +357,17 @@
     });
   }
 
+  // ── Keyboard Shortcut: Shift+O opens all BJB HUB demo links ────
+  document.addEventListener('keydown', function(e) {
+    if (e.shiftKey && e.key === 'O') {
+      var base = 'https://bjb-hub--dispute-os-beta.us-east4.hosted.app/demo?flow=';
+      var flows = ['legal', 'legal-dashboard', 'medical', 'medical-dashboard', 'provider', 'arbitrator', 'admin-referrals', 'admin-firms'];
+      flows.forEach(function(flow) {
+        window.open(base + flow, '_blank');
+      });
+    }
+  });
+
   // ── Smooth Scroll — uses GSAP if available for buttery smoothness ──
   function smoothScrollTo(section, dur) {
     var target = section.querySelector('.section-label, .solution-label');
