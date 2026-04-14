@@ -359,7 +359,8 @@
 
   // ── Keyboard Shortcut: Shift+O opens all BJB HUB demo links ────
   document.addEventListener('keydown', function(e) {
-    if (e.shiftKey && e.key === 'O') {
+    if (e.ctrlKey && e.shiftKey && e.key === 'H') {
+      e.preventDefault();
       var base = 'https://bjb-hub--dispute-os-beta.us-east4.hosted.app/demo?flow=';
       var flows = ['legal', 'legal-dashboard', 'medical', 'medical-dashboard', 'provider', 'arbitrator', 'admin-referrals', 'admin-firms'];
       flows.forEach(function(flow) {
