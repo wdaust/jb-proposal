@@ -564,6 +564,7 @@
 
   // ── Initialize Everything ─────────────────────────────────────
   function init() {
+    window.scrollTo(0, 0);
     initProgressBar();
     initDotNav();
     initScrollToTop();
